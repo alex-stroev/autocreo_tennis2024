@@ -2,21 +2,21 @@
     text-align: center;
     position: relative;
 
-    &__gsap-frames {
-        position: relative;
-        height: 360px;
-        // background-color: gold;
+    // &__gsap-frames {
+    //     position: relative;
+    //     height: 360px;
+    //     // background-color: gold;
 
-        .gsap-frame {
-            &--api,
-            &--static {
-                // background-color: darkorange;
-                width: ($aside-width - $aside_sidepad * 2);
-                left: 0;
-                top: 0;
-            }
-        }
-    }
+    //     .gsap-frame {
+    //         &--api,
+    //         &--static {
+    //             // background-color: darkorange;
+    //             width: ($aside-width - $aside_sidepad * 2);
+    //             left: 0;
+    //             top: 0;
+    //         }
+    //     }
+    // }
 
     &__title {
         //

@@ -251,10 +251,10 @@ body {
 //
 // @import "../__components/testoutput/testoutput";
 
-.gsap-frame--api {
-    display: none;
-    opacity: 0;
-}
+// .gsap-frame--api {
+//     display: none;
+//     opacity: 0;
+// }
 
 // .body-frame-1 {
 //     background-color: orchid !important;
@@ -312,5 +312,27 @@ body {
         span {
             color: var(--emph);
         }
+    }
+}
+
+.i-gsap-frame {
+    &--static {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    &--api {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+        // display: none;
+        // opacity: 0;
+
+        background-color: yellow;
     }
 }

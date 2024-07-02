@@ -83,9 +83,9 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     ///////////////////////////////////
     const headerFRAME1 = createElementFromHTML(HEADER_FRAME.innerHTML); // забираем при инициализации
+ 
     const headerFRAME2 = createElementFromHTML(`
-    <div class="header-api">
-    <div class="top-banner">
+    <div class="top-banner i-gsap-frame--api">
         <div class="top-banner__team">${data.TEAM1}</div>
         <div class="top-banner__pic">
             <img src="${data.LOGO1}" alt="" />
@@ -121,7 +121,6 @@ const gsapAnimations = (data, AUTOEVENT) => {
             <div>${data.TEAM2}</div>
         </div>
     </div>
-</div>
 
     `);
 
