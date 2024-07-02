@@ -1,5 +1,7 @@
+import { createElementFromHTML } from "./helpers";
 const gsapAnimations = (data, AUTOEVENT) => {
     const BODY = document.body || document.getElementsByTagName("body")[0];
+    const HEADER_FRAME = document.getElementById("header-frame");
 
     // Время указываем в секундах
     const ballAnimationDuration = 1.5;
@@ -77,7 +79,64 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     // запускаем анимацию статического кадра в любом случае
     startAnimations(animationsStatic);
-    BODY.classList.add("body-frame-1");
+    // BODY.classList.add("body-frame-1");
+
+    ///////////////////////////////////
+    const headerFRAME1 = createElementFromHTML(`
+        
+    <div class="b2000">
+                <div class="b2000__top">
+                    <div class="b2000__value">2 000</div>
+                    <div class="b2000__descr">
+                        <span>рублей</span> 
+                        <span>фрибет</span>
+                    </div>
+                </div>
+                 <div class="b2000__bott">за <span>первую ставку!</span></div>
+            </div>   
+    
+    
+    
+    `);
+    const headerFRAME2 = createElementFromHTML(`
+    <div class="top-banner">
+                <div class="top-banner__team">${data.TEAM1}</div>
+                <div class="top-banner__pic">
+                    <img src="${data.LOGO1}" alt="" />
+                </div>
+                <div class="top-banner__content">
+                    <div class="top-banner__champ">${data.CHAMP}</div>
+                    <div class="top-banner__time"><span>${data.STARTDATE}</span>/<span>${data.STARTTIME}</span></div>
+                    <div class="top-banner__live">
+                        <span>Live</span>
+                    </div>
+
+                    <div class="top-banner__lowwrapper">
+                        <div class="large-header">
+                            <div class="large-header__top"><img src="img/lilball.png" alt="" width="36" height="36" /></div>
+                            <div class="large-header__teams">
+                                <div class="large-header__team">${data.TEAM1}</div>
+                                <div class="large-header__team">${data.TEAM2}</div>
+                            </div>
+                        </div>
+                        <div class="top-quotes">
+                            <div class="top-quotes__item">${data.QUOTE1}</div>
+                            <div class="top-quotes__item">${data.QUOTEX}</div>
+                            <div class="top-quotes__item">${data.QUOTE2}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-banner__pic">
+                    <img src="${data.LOGO2}" alt="" />
+                </div>
+                <div class="top-banner__team">${data.TEAM2}</div>
+                <div class="top-banner__teams-mob">
+                    <div>${data.TEAM1}</div>
+                    <div>${data.TEAM2}</div>
+                </div>
+            </div>
+    `);
+
     //////////////////////////////////////////////////////////////////////////////
     //   Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
@@ -102,38 +161,38 @@ const gsapAnimations = (data, AUTOEVENT) => {
     ///// end if
 
     function showFrame__static() {
-        frameApi.forEach((item) => {
-            hideStage(item);
-        });
+        HEADER_FRAME.innerHTML = "";
+        HEADER_FRAME.appendChild(headerFRAME1);
+        // frameApi.forEach((item) => {
+        //     hideStage(item);
+        // });
 
-        startAnimations(animationsStatic);
+        // startAnimations(animationsStatic);
 
-        frameStatic.forEach((item) => {
-            showStage(item);
-        });
-        setTimeout(() => {
-            stopAnimations(animationsAPI);
-            BODY.classList.add("body-frame-1");
-            BODY.classList.remove("body-frame-2");
-        }, frameFadeDuration * 1000);
+        // frameStatic.forEach((item) => {
+        //     showStage(item);
+        // });
+        // setTimeout(() => {
+        //     stopAnimations(animationsAPI);
+        // }, frameFadeDuration * 1000);
     }
 
     function showFrame__API() {
-        frameStatic.forEach((item) => {
-            hideStage(item);
-        });
+        HEADER_FRAME.innerHTML = "";
+        HEADER_FRAME.appendChild(headerFRAME2);
+        // frameStatic.forEach((item) => {
+        //     hideStage(item);
+        // });
 
-        startAnimations(animationsAPI);
+        // startAnimations(animationsAPI);
 
-        frameApi.forEach((item) => {
-            showStage(item);
-        });
+        // frameApi.forEach((item) => {
+        //     showStage(item);
+        // });
 
-        setTimeout(() => {
-            stopAnimations(animationsStatic);
-            BODY.classList.add("body-frame-2");
-            BODY.classList.remove("body-frame-1");
-        }, frameFadeDuration * 1000);
+        // setTimeout(() => {
+        //     stopAnimations(animationsStatic);
+        // }, frameFadeDuration * 1000);
     }
 
     //////////////////////////////////////////////////////////////////////////////
@@ -141,7 +200,6 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     function showStage(x) {
-        // x.style.position = "relative";
         x.style.display = "inherit";
         gsap.to(x, {
             duration: frameFadeDuration,
