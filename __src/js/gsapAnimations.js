@@ -82,65 +82,53 @@ const gsapAnimations = (data, AUTOEVENT) => {
     // BODY.classList.add("body-frame-1");
 
     ///////////////////////////////////
-    const headerFRAME1 = createElementFromHTML(`
-        
-    <div class="b2000">
-                <div class="b2000__top">
-                    <div class="b2000__value">2 000</div>
-                    <div class="b2000__descr">
-                        <span>рублей</span> 
-                        <span>фрибет</span>
-                    </div>
-                </div>
-                 <div class="b2000__bott">за <span>первую ставку!</span></div>
-            </div>   
-    
-    
-    
-    `);
+    const headerFRAME1 = createElementFromHTML(HEADER_FRAME.innerHTML); // забираем при инициализации
     const headerFRAME2 = createElementFromHTML(`
+    <div class="header-api">
     <div class="top-banner">
-                <div class="top-banner__team">${data.TEAM1}</div>
-                <div class="top-banner__pic">
-                    <img src="${data.LOGO1}" alt="" />
-                </div>
-                <div class="top-banner__content">
-                    <div class="top-banner__champ">${data.CHAMP}</div>
-                    <div class="top-banner__time"><span>${data.STARTDATE}</span>/<span>${data.STARTTIME}</span></div>
-                    <div class="top-banner__live">
-                        <span>Live</span>
-                    </div>
+        <div class="top-banner__team">${data.TEAM1}</div>
+        <div class="top-banner__pic">
+            <img src="${data.LOGO1}" alt="" />
+        </div>
+        <div class="top-banner__content">
+            <div class="top-banner__champ">${data.CHAMP}</div>
+            <div class="top-banner__time"><span>${data.STARTDATE}</span>/<span>${data.STARTTIME}</span></div>
+            <div class="top-banner__live">
+                <span>Live</span>
+            </div>
 
-                    <div class="top-banner__lowwrapper">
-                        <div class="large-header">
-                            <div class="large-header__top"><img src="img/lilball.png" alt="" width="36" height="36" /></div>
-                            <div class="large-header__teams">
-                                <div class="large-header__team">${data.TEAM1}</div>
-                                <div class="large-header__team">${data.TEAM2}</div>
-                            </div>
-                        </div>
-                        <div class="top-quotes">
-                            <div class="top-quotes__item">${data.QUOTE1}</div>
-                            <div class="top-quotes__item">${data.QUOTEX}</div>
-                            <div class="top-quotes__item">${data.QUOTE2}</div>
-                        </div>
+            <div class="top-banner__lowwrapper">
+                <div class="large-header">
+                    <div class="large-header__top"><img src="img/lilball.png" alt="" width="36" height="36" /></div>
+                    <div class="large-header__teams">
+                        <div class="large-header__team">${data.TEAM1}</div>
+                        <div class="large-header__team">${data.TEAM2}</div>
                     </div>
                 </div>
-                <div class="top-banner__pic">
-                    <img src="${data.LOGO2}" alt="" />
-                </div>
-                <div class="top-banner__team">${data.TEAM2}</div>
-                <div class="top-banner__teams-mob">
-                    <div>${data.TEAM1}</div>
-                    <div>${data.TEAM2}</div>
+                <div class="top-quotes">
+                    <div class="top-quotes__item">${data.QUOTE1}</div>
+                    <div class="top-quotes__item">${data.QUOTEX}</div>
+                    <div class="top-quotes__item">${data.QUOTE2}</div>
                 </div>
             </div>
+        </div>
+        <div class="top-banner__pic">
+            <img src="${data.LOGO2}" alt="" />
+        </div>
+        <div class="top-banner__team">${data.TEAM2}</div>
+        <div class="top-banner__teams-mob">
+            <div>${data.TEAM1}</div>
+            <div>${data.TEAM2}</div>
+        </div>
+    </div>
+</div>
+
     `);
 
     //////////////////////////////////////////////////////////////////////////////
     //   Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
-
+    // showFrame__static(); // начальный запуск
     if (isData && AUTOEVENT) {
         showFrame__static(); // начальный запуск
         let i = false;

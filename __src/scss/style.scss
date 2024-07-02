@@ -276,9 +276,8 @@ body {
     font-weight: 900;
     line-height: 1;
     text-transform: uppercase;
-
+    // font-size: указываем только для элемента при двойном BEM;
     font-size: 21px;
-
     // font-size: 1vw;
 
     div {
