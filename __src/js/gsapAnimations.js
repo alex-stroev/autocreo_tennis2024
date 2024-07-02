@@ -13,8 +13,8 @@ const gsapAnimations = (data, AUTOEVENT) => {
     const frame2duration = ballAnimationDuration * 1.75;
 
     //
-    const frameStatic = document.querySelectorAll(".gsap-frame--static");
-    const frameApi = document.querySelectorAll(".gsap-frame--api");
+    const frameStatic = document.querySelectorAll(".i-gsap-frame--static");
+    const frameApi = document.querySelectorAll(".i-gsap-frame--api"); // При APPEND не инициализируется
     const isData = Boolean(data.CHAMP);
     const repeatCase = isData && AUTOEVENT;
 
@@ -83,7 +83,7 @@ const gsapAnimations = (data, AUTOEVENT) => {
 
     ///////////////////////////////////
     const headerFRAME1 = createElementFromHTML(HEADER_FRAME.innerHTML); // забираем при инициализации
- 
+
     const headerFRAME2 = createElementFromHTML(`
     <div class="top-banner i-gsap-frame--api">
         <div class="top-banner__team">${data.TEAM1}</div>
@@ -130,15 +130,13 @@ const gsapAnimations = (data, AUTOEVENT) => {
     // showFrame__static(); // начальный запуск
     if (isData && AUTOEVENT) {
         showFrame__static(); // начальный запуск
+        HEADER_FRAME.appendChild(headerFRAME2);
         let i = false;
 
         setInterval(function () {
             // срабатывает через frameStageDuration
-            // i % 2 ? showFrame__static() : showFrame__API();
             i ? showFrame__static() : showFrame__API();
-            // i++;
             i = !i;
-            // console.log(i);
         }, frameStageDuration * 1000);
     } else {
         // если нет даннных, просто запускаем анимацию статического кадра
@@ -148,34 +146,44 @@ const gsapAnimations = (data, AUTOEVENT) => {
     ///// end if
 
     function showFrame__static() {
-        HEADER_FRAME.innerHTML = "";
-        HEADER_FRAME.appendChild(headerFRAME1);
+        // HEADER_FRAME.innerHTML = "";
+        // HEADER_FRAME.appendChild(headerFRAME1);
+
+
         // frameApi.forEach((item) => {
         //     hideStage(item);
         // });
 
+        document.querySelectorAll(".i-gsap-frame--api").forEach((item) => {
+            hideStage(item);
+        });
+
         // startAnimations(animationsStatic);
 
-        // frameStatic.forEach((item) => {
-        //     showStage(item);
-        // });
+        frameStatic.forEach((item) => {
+            showStage(item);
+        });
         // setTimeout(() => {
         //     stopAnimations(animationsAPI);
         // }, frameFadeDuration * 1000);
     }
 
     function showFrame__API() {
-        HEADER_FRAME.innerHTML = "";
-        HEADER_FRAME.appendChild(headerFRAME2);
-        // frameStatic.forEach((item) => {
-        //     hideStage(item);
-        // });
+        // HEADER_FRAME.innerHTML = "";
+        // HEADER_FRAME.appendChild(headerFRAME2);
+        frameStatic.forEach((item) => {
+            hideStage(item);
+        });
 
         // startAnimations(animationsAPI);
 
         // frameApi.forEach((item) => {
         //     showStage(item);
         // });
+
+        document.querySelectorAll(".i-gsap-frame--api").forEach((item) => {
+            showStage(item);
+        });
 
         // setTimeout(() => {
         //     stopAnimations(animationsStatic);
