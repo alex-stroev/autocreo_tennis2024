@@ -9,7 +9,7 @@
     margin: 0 auto;
     overflow: hidden;
 
-    background-color: brown;
+    // background-color: brown;
 
     // width: 1600px;
     width: $content-width-lr + $aside-width * 2;
@@ -38,7 +38,7 @@
         box-sizing: border-box;
         padding: 0 8px;
 
-        background-color: orange;
+        // background-color: orange;
 
         .in-sports & {
             max-width: $content-width-sports;
@@ -74,7 +74,7 @@
     }
 
     &__aside-item {
-        background-color: darkcyan;
+        // background-color: darkcyan;
         padding: 0 $aside_sidepad;
         width: $aside-width;
         box-sizing: border-box;

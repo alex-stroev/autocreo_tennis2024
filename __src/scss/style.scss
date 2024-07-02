@@ -264,7 +264,54 @@ body {
 //     background-color: limegreen !important;
 // }
 
-
-.gsap-top-1, .gsap-top-2 {
+.gsap-top-1,
+.gsap-top-2 {
     visibility: hidden;
+}
+
+//////////////////////////////////////////////////////////
+///
+//////////////////////////////////////////////////////////
+.b2000 {
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+
+    font-size: 21px;
+
+    // font-size: 1vw;
+
+    div {
+        white-space: nowrap;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__value {
+        color: var(--emph);
+        font-size: calc(54em / 21);
+    }
+
+    &__descr {
+        font-size: calc(19em / 21);
+        line-height: calc(228 / 190);
+        padding-top: 0.3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        span {
+            display: block;
+        }
+    }
+
+    &__bott {
+        span {
+            color: var(--emph);
+        }
+    }
 }
