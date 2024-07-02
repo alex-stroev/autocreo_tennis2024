@@ -1,0 +1,114 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    min-height: 100%;
+    max-width: 100%;
+    text-decoration: none;
+    margin: 0 auto;
+    overflow: hidden;
+
+    background-color: brown;
+
+    // width: 1600px;
+    width: $content-width-lr + $aside-width * 2;
+
+    .in-sports & {
+        width: $content-width-sports + $aside-width * 2;
+    }
+
+    .in-championat & {
+        width: $content-width-championat + $aside-width * 2;
+    }
+
+    .in-soccer & {
+        width: $content-width-soccer + $aside-width * 2;
+
+        @media (max-width: $soccer_bp) {
+            // background-color: lime;
+            width: $content-width-soccer-small + $aside-width * 2;
+        }
+    }
+
+    &__header {
+        max-width: $content-width-lr;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 8px;
+
+        background-color: orange;
+
+        .in-sports & {
+            max-width: $content-width-sports;
+        }
+
+        .in-championat & {
+            max-width: $content-width-championat;
+        }
+
+        .in-soccer & {
+            max-width: $content-width-soccer;
+
+            @media (max-width: $soccer_bp) {
+                max-width: $content-width-soccer-small;
+            }
+        }
+    }
+
+    &__aside {
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: $toggle) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__aside-item {
+        background-color: darkcyan;
+        padding: 0 $aside_sidepad;
+        width: $aside-width;
+        box-sizing: border-box;
+        padding-top: var(--aside-padding-top);
+    }
+
+    &__placeholder {
+        min-width: $content-width-lr;
+        width: $content-width-lr;
+        // box-sizing: border-box;
+        background-color: rgba(#fff, 5%);
+        //
+        background-color: #fff;
+        // height: 0;
+        z-index: 5;
+
+        .in-sports & {
+            min-width: $content-width-sports;
+            width: $content-width-sports;
+        }
+
+        .in-championat & {
+            min-width: $content-width-championat;
+            width: $content-width-championat;
+        }
+
+        .in-soccer & {
+            min-width: $content-width-soccer;
+            width: $content-width-soccer;
+
+            @media (max-width: $soccer_bp) {
+                min-width: $content-width-soccer-small;
+                width: $content-width-soccer-small;
+            }
+        }
+    }
+}

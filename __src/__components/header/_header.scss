@@ -1,0 +1,514 @@
+$midwidth: auto;
+.header {
+    $gap: 28px;
+
+    //
+    padding: 4px 0;
+    width: 100%;
+    overflow: hidden;
+
+    // Установку высоты делаем в &__top, чтоб не писать 100500 флекс-инструкций
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        // min-height: 100px;
+        height: 68px;
+        gap: 12px;
+        //
+        height: 100 - $gap;
+
+        .in-sports & {
+            height: 250 - $gap;
+        }
+
+        .in-championat & {
+            height: 200 - $gap;
+        }
+
+        in-sports & {
+            height: 250 - $gap;
+        }
+
+        .in-soccer & {
+            height: 140 - $gap;
+        }
+    }
+
+    &__left,
+    &__center,
+    &__right {
+        flex: 1 1 0;
+        position: relative;
+    }
+
+    &__left {
+        flex: 1 1 0;
+        padding-left: 6px;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+        // flex-basis: 246px;
+        flex-basis: 15%;
+
+        // @media (max-width: $tbp) {
+        //     flex-basis: auto;
+        // }
+
+        // .in-soccer &,
+        // .in-lr & {
+        //     @media (max-width: 1800px) {
+        //         background-color: brown;
+        //     }
+        // }
+    }
+
+    &__center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .body-frame-1 & {
+            flex-basis: 30%;
+        }
+
+        .body-frame-2 & {
+            flex-basis: auto;
+            flex: 100 100 0;
+        }
+    }
+
+    &__right {
+        flex: 1 1 0;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 18px;
+        white-space: nowrap;
+        align-items: center;
+
+        .in-sports &,
+        .in-championat & {
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+
+            img {
+                width: 500px;
+                max-width: 100%;
+            }
+        }
+
+        .in-soccer &,
+        .in-lr & {
+            flex: 5 5 0;
+            gap: 32px;
+
+            img {
+                height: 52px;
+            }
+        }
+    }
+
+    &__logo {
+        display: flex;
+        flex: 1 1 0;
+        align-items: center;
+
+        img {
+            height: auto;
+            // @media (max-width: $tbp) {
+            //     width: (246 / 1200 * 100vw);
+            // }
+        }
+    }
+
+    &__adv {
+        color: #fff;
+        font-size: 12.556px;
+    }
+
+    &__marquee {
+        color: #b0c3f7;
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        will-change: transform;
+        transform: translateZ(1px) translateX(0);
+        white-space: nowrap;
+        z-index: 3;
+        overflow: hidden;
+
+        span {
+            display: block;
+            animation: moveTextRow 30s linear infinite;
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
+    /// сдвоенные кнопки
+    /////////////////////////////////////////////////////////////////
+    &__getbonus,
+    &__promo {
+        $bfs: 22;
+        color: #fff;
+        text-align: center;
+
+        font-weight: 900;
+        text-transform: uppercase;
+        border-radius: 8px;
+        background: var(--crimson);
+        box-sizing: border-box;
+
+        //
+        font-size: $bfs * 1px;
+        padding: 8px 16px;
+        @include fluid_typo_auto($tbp, 22, 14);
+
+        .in-soccer &,
+        .in-lr & {
+            @include fluid_typo_auto(1600, 22, 14);
+        }
+
+        .in-sports &,
+        .in-championat & {
+            display: block;
+            width: 100%;
+        }
+
+        // .body-frame-2 & {
+        //     opacity: 1 !important;
+        //     visibility: visible !important;
+        // }
+    }
+
+    &__promo {
+        font-weight: 400;
+        background-color: transparent;
+        border: 2px solid var(--emph);
+        padding: 6px 16px;
+        box-sizing: border-box;
+
+        span {
+            font-weight: 900;
+            color: var(--emph);
+        }
+
+        .body-frame-2 & {
+            display: none;
+        }
+    }
+}
+
+.top-banner {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__pic {
+        flex: 0 0 60px;
+        text-align: center;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        img {
+            width: 60px;
+            height: auto;
+        }
+
+        /////////////////////////////////////////////
+        .in-sports & {
+            flex: 1 1 0;
+
+            img {
+                width: 112px;
+            }
+        }
+
+        .in-championat & {
+            flex: 1 1 0;
+
+            img {
+                width: 90px;
+            }
+        }
+    }
+
+    &__team {
+        flex: 1 1 0;
+        text-align: left;
+        padding: 0 1em;
+
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--emph);
+
+        font-size: 15px;
+        line-height: (18/15);
+        @include fluid_typo_auto($tbp, 15, 12);
+
+        &:first-child {
+            text-align: right;
+        }
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        .in-sports &,
+        .in-championat & {
+            display: none;
+        }
+    }
+
+    &__teams-mob {
+        display: none;
+
+        @media (max-width: $mobile) {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: var(--emph);
+            gap: 24px;
+        }
+
+        font-size: 12px;
+
+        .live-is-avaliable & {
+            font-size: 10px;
+            // color: red;
+        }
+
+        .in-sports &,
+        .in-championat & {
+            display: none;
+        }
+    }
+
+    &__content {
+        flex: 2 2 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px 4px 2px;
+
+        @media (max-width: $mobile) {
+            // background-color: red;
+            order: -1;
+        }
+    }
+
+    &__champ {
+        font-weight: 900;
+        font-size: 12px;
+        line-height: calc(17 / 14);
+        text-align: center;
+        color: var(--emph);
+        text-transform: uppercase;
+
+        padding: 2px 4px;
+
+        .live-is-avaliable:not(.in-sports):not(.in-championat):not(.in-soccer) & {
+            white-space: nowrap;
+        }
+
+        .in-sports & {
+            font-size: 16px;
+            @include fluid_typo_auto($tbp, 16, 12);
+        }
+
+        .in-championat &,
+        .in-soccer & {
+            white-space: nowrap;
+            font-size: 15px;
+            @include fluid_typo_auto($tbp, 14, 12);
+        }
+    }
+
+    &__time {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 13px;
+        text-align: center;
+
+        .in-sports &,
+        .in-championat & {
+            font-size: 14px;
+        }
+    }
+
+    &__live {
+        .live-not-avaliable & {
+            display: none;
+
+            & + div {
+                margin-top: 4px;
+            }
+        }
+
+        padding: 2px 4px;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+
+        span {
+            $s: 10px;
+            white-space: nowrap;
+            &::after {
+                content: "";
+                display: inline-block;
+                width: $s;
+                height: $s;
+                border-radius: 999em;
+                background-color: var(--red);
+                position: relative;
+                margin-left: 0.5em;
+            }
+        }
+    }
+
+    // &__lowwrapper {
+    //     background-color: darkcyan;
+    // }
+}
+
+.top-quotes {
+    display: flex;
+    gap: 4px;
+
+    .in-sports &,
+    .in-championat & {
+        width: $midwidth;
+        justify-content: space-between;
+    }
+
+    .two-teams & {
+        display: none;
+    }
+
+    &__item {
+        font-weight: 900;
+        font-size: 12px;
+        padding: (2em/12) (6em/12);
+        background-color: #fff;
+        border-radius: 2px;
+        color: var(--bgcolor);
+        line-height: 1;
+
+        span {
+            display: inline-block;
+        }
+
+        .in-sports &,
+        .in-championat & {
+            padding: 0.25em 1em;
+            flex: 1 1 0;
+
+            font-size: 14px;
+            font-size: 14px;
+            @include fluid_typo_auto($tbp, 14, 10);
+        }
+
+        // .in-championat & {
+        //     padding: 0.25em 1em;
+        // }
+    }
+}
+
+.top-offer {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 11px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+
+    & > div {
+        font-family: "Nekst";
+        font-size: 24px;
+        padding-bottom: 4px;
+        font-weight: 700;
+        line-height: 16px;
+        color: var(--emph);
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// для sports и чемпионата
+//////////////////////////////////////////////////////////////////////////////////////////////////
+.large-header {
+    display: none;
+
+    .in-sports &,
+    .in-championat & {
+        display: block;
+        width: $midwidth;
+    }
+
+    &__top {
+        text-align: center;
+        padding: 8px 0 4px;
+
+        .in-championat & {
+            padding-top: 8px;
+        }
+
+        .live-is-avaliable & {
+            padding-top: 0 !important;
+            position: relative;
+            margin-top: 0;
+        }
+
+        img {
+            width: 36px;
+            height: auto;
+            margin: 0 auto;
+        }
+    }
+
+    &__teams {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 12px;
+        padding-bottom: 4px;
+    }
+
+    &__team {
+        flex: 1 1 0px;
+
+        text-transform: uppercase;
+        font-weight: 900;
+        color: var(--emph);
+        display: block;
+        text-align: right;
+
+        font-size: 14px;
+        line-height: (17/14);
+        @include fluid_typo_auto($tbp, 14, 10);
+
+        &:first-child {
+            text-align: left;
+        }
+
+        .in-championat & {
+            font-size: 11px;
+            line-height: 1;
+            padding-bottom: 4px;
+            @include fluid_typo_auto($tbp, 12, 10);
+        }
+    }
+}

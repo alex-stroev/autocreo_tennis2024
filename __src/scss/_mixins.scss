@@ -1,0 +1,27 @@
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+/////////////////////////////////////////////////////////////
+/// Типографика - авто
+/////////////////////////////////////////////////////////////
+@mixin fluid_typo_auto($startwidth, $startsize, $endsize) {
+    $startwidth: (strip-unit($startwidth));
+    $startsize: (strip-unit($startsize));
+    $endsize: (strip-unit($endsize));
+    $endwidth: round($startwidth * $endsize/$startsize);
+
+    font-size: ($startsize * 1px);
+
+    @media screen and (max-width: ($startwidth * 1px)) {
+        font-size: ($startsize/$startwidth * 100vw);
+    }
+
+    @media screen and (max-width: ($endwidth * 1px)) {
+        font-size: ($endsize * 1px);
+    }
+}

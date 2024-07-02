@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <!-- $stamp = 1_16 -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=contain" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title><!-- $stamp --> Euro2024 2000</title>
+        <style>
+            @font-face {
+                font-family: "StyreneALC";
+                src: url("fonts/StyreneALC-Regular.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "StyreneALC";
+                src: url("fonts/StyreneALC-Black.woff") format("woff");
+                font-weight: 900;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "StyreneALC";
+                src: url("fonts/StyreneALC-Bold.woff") format("woff");
+                font-weight: bold;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Nekst";
+                src: url("fonts/Nekst-Regular.woff") format("woff");
+                font-weight: bold;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Nekst";
+                src: url("fonts/Nekst-Bold.woff") format("woff");
+                font-weight: bold;
+                font-style: normal;
+                font-display: swap;
+            }
+        </style>
+        <link rel="stylesheet" href="assets/styles_<!-- $stamp -->.css?" />
+        <style>
+            body::after {
+                background: url("img/elements.svg") 0 100% no-repeat;
+                background-size: contain;
+            }
+
+            body.in-championat::after {
+                z-index: 2;
+                background-image: url("img/champ_grad.png");
+                background-size: 100% auto;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        </style>
+        <script>
+            window.autobet = { alias: "EURO_2k" };
+        </script>
+        <script src="https://fcdn.betcity.ru/autobet/autobet.js"></script>
+        <!-- <script src="libs/autobet.js"></script> -->
+    </head>
+
+    <body class="in-lr1 in-sports1 in-championat1 in-soccer">
+        <a class="body-wrap" href="%banner.reference_user1%" target="%banner.target%">
+            <div class="layout">
+                <div class="layout__header">
+                    <!--  @include __components/header/header.kit -->
+                </div>
+                <div class="layout__aside">
+                    <div class="layout__aside-item i-aside-left">
+                        <!--  @include __components/aside/left.kit -->
+                    </div>
+                    <div class="layout__placeholder">
+                        <!--  @ include __components/testoutput/testoutput.kit -->
+                    </div>
+                    <div class="layout__aside-item i-aside-right">
+                        <!--  @include __components/aside/right.kit -->
+                    </div>
+                </div>
+            </div>
+        </a>
+        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <!-- <script src="libs/createjs.min.js"></script> -->
+        <script src="libs/scriptscanvas.js"></script>
+        <script src="libs/cup.js"></script>
+        <script src="libs/gsap_min.js"></script>
+        <script src="assets/script_<!-- $stamp -->.js?"></script>
+    </body>
+</html>

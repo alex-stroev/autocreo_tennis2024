@@ -1,0 +1,270 @@
+@import "reset";
+@import "mixins";
+@import "gsapped";
+
+$tbp: 1200px;
+
+$content-width-lr: 1300px;
+$content-width-sports: 1130px;
+$content-width-championat: 1080px;
+$content-width-soccer: 1427px;
+$content-width-soccer-small: 1183px;
+//
+$soccer_bp: 1626px;
+//
+// $aside-width: 150px;
+$aside-width: 150px;
+$aside_sidepad: 8px;
+$toggle: calc($content-width-lr + $aside-width * 2);
+$mobile: 1200px;
+
+:root {
+    --aside-padding-top: 60px;
+    --red: #ce0000;
+    --lime: #affc41;
+    --crimson: #e43659;
+    --bgcolor: #0007a7;
+    --emph: #affc41;
+}
+
+::selection {
+    background-color: var(--bgcolor);
+    color: #fff;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    overflow-x: hidden;
+    // min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-dark);
+
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+
+::selection {
+    background: var(--color-selection);
+    color: #fff;
+    text-shadow: none;
+    -webkit-text-fill-color: #fff;
+    background-clip: content-box;
+}
+
+body {
+    background: #143dda linear-gradient(180deg, #0f2a99 0%, rgba(15, 42, 153, 0) 100%);
+
+    color: #fff;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    // height: 100%; // ИМЕННО ЗДЕСЬ ЭТО НУЖНО
+
+    // @media (max-width: $toggle) {
+    //     background-color: lime;
+    // }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    // &:not(.has-event) {
+    //     &::before {
+    //         background: linear-gradient(90deg, rgba(5, 24, 84, 1) 0%, rgba(5, 24, 84, 0) 20%, rgba(5, 24, 84, 0) 80%, rgba(5, 24, 84, 1) 100%);
+    //     }
+    // }
+
+    &::after {
+        z-index: 1;
+        // max-height: 1080px;
+        // background: url("../img/elements.svg") 0 100% no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 1080px;
+    }
+
+    &.in-sports,
+    &.in-championat {
+        height: auto;
+    }
+
+    &.in-championat {
+        background: #143dda;
+        $champcolor: #071a5e;
+        $champgap: 10%;
+        $champgap_v: 10%;
+
+        &::before {
+            // background-image:
+            // linear-gradient(90deg, $champcolor 0%, rgba(5, 24, 84, 0) $champgap, rgba(5, 24, 84, 0) (100-$champgap), $champcolor 100%),
+            // linear-gradient(0deg, $champcolor 0%, rgba(5, 24, 84, 0) $champgap_v, rgba(5, 24, 84, 0) (100-$champgap_v), rgba(5, 24, 84, 0) 100%);
+            // background-size: contain contain;
+            z-index: 2;
+            // background-image: url("../img/champ_grad.png");
+            // background-size: 100% auto;
+
+            background-position: bottom;
+            background-repeat: no-repeat;
+
+            display: none;
+        }
+
+        &::after {
+            height: 100%;
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////
+///
+/////////////////////////////////////////////////////////////
+.body-wrap {
+    position: relative;
+    z-index: 5;
+    text-decoration: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+/////////////////////////////////
+
+.offer-100 {
+    text-align: center;
+    font-weight: 900;
+    line-height: 11px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    //
+    font-size: 10px;
+
+    &__header {
+        position: relative;
+        font-family: "Nekst";
+        font-size: calc(24em / 10);
+        padding-bottom: calc(6em / 24);
+        font-weight: 700;
+        line-height: calc(16em / 24);
+        color: var(--emph);
+        white-space: nowrap;
+
+        sup {
+            position: absolute;
+            font-size: 0.6em;
+            // color: red;
+            top: -0.4em;
+            right: -0.4em;
+
+            .aside & {
+                top: -0.2em;
+                right: 0.4em;
+            }
+        }
+    }
+
+    span {
+        display: block;
+    }
+
+    .header & {
+        $sp: 12px;
+        //
+        font-size: 22px;
+        @include fluid_typo_auto($tbp, 22, 10);
+    }
+}
+
+.i-an-btn {
+    z-index: 0;
+    overflow: hidden;
+    position: relative;
+
+    $base_color: #fff;
+    $edge_color: rgba($base_color, 0%);
+    $middle_color: rgba($base_color, 50%);
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 30%;
+        height: 100%;
+        background: linear-gradient(90deg, $edge_color 0%, $middle_color 50%, $edge_color 100%);
+        z-index: -1;
+        transform: skewX(-15deg) translateX(-300%);
+        animation: flickerBtn 3s linear infinite;
+    }
+}
+
+//////////////////////////////////////////////
+
+.get-bonus-aside {
+    margin: 8px 2px 0;
+    border-radius: 6px;
+    background: var(--crimson);
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 8px 6px 7px;
+    //
+    transition: 0.3 ease-in-out;
+
+    // .data-received & {
+    //     position: absolute;
+    //     top: 400px;
+    // }
+
+    // position: absolute;
+    // top: 400px;
+}
+
+@import "layout";
+@import "../__components/aside/aside";
+@import "../__components/header/header";
+@import "highlights";
+@import "animations";
+
+//
+// @import "../__components/testoutput/testoutput";
+
+.gsap-frame--api {
+    display: none;
+    opacity: 0;
+}
+
+// .body-frame-1 {
+//     background-color: orchid !important;
+// }
+
+// .body-frame-2 {
+//     background-color: limegreen !important;
+// }
+
+
+.gsap-top-1, .gsap-top-2 {
+    visibility: hidden;
+}

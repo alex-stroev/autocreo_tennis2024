@@ -1,0 +1,39 @@
+@keyframes moveTextRow {
+    0% {
+        transform: translateZ(1px) translateX(0);
+    }
+
+    to {
+        transform: translateZ(1px) translateX(calc(-100% - 67.4em));
+    }
+}
+
+@keyframes flickerBtn {
+    0% {
+        transform: skewX(-15deg) translateX(-300%);
+    }
+
+    30% {
+        transform: skewX(-15deg) translateX(300%);
+    }
+
+    to {
+        transform: skewX(-15deg) translateX(300%);
+    }
+}
+
+
+@keyframes ballJump {
+    $start: -10px;
+    0% {
+      transform: translateY($start);
+    }
+  
+    50% {
+      transform: translateY(50px);
+    }
+  
+    100% {
+      transform: translateY($start);
+    }
+  }
