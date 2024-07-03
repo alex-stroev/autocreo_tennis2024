@@ -1,5 +1,5 @@
 import { createElementFromHTML } from "./helpers";
-import { tlStaticHeaderOffer100 } from "./gsapAnimations";
+import { tlStaticHeaderOffer100, zzzqqq } from "./gsapAnimations";
 const framesHandler = (data, AUTOEVENT) => {
     const BODY = document.body || document.getElementsByTagName("body")[0];
     const HEADER_FRAME_1 = document.getElementById("header-frame1");
@@ -33,7 +33,7 @@ const framesHandler = (data, AUTOEVENT) => {
 
     // Для запуска прописываем все таймлайны в массив
     const animationsStatic = [tlStaticHeaderOffer100];
-    const animationsAPI = [];
+    const animationsAPI = [zzzqqq];
 
     //////////////////////////////////////////////////////////////////////////////
     // запускаем анимацию статического кадра в любом случае
@@ -54,15 +54,15 @@ const framesHandler = (data, AUTOEVENT) => {
     const headerKEFS = Boolean(data.QUOTEX)
         ? `
                 <div class="top-quotes-3">
-                    <div class="top-quotes-3__item">${data.QUOTE1}</div>
-                    <div class="top-quotes-3__item">${data.QUOTEX}</div>
-                    <div class="top-quotes-3__item">${data.QUOTE2}</div>
+                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTE1}</div>
+                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTEX}</div>
+                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTE2}</div>
                 </div>
     `
         : `
             <div class="top-quotes-2">
-                    <div class="top-quotes-2__item">${data.QUOTE1}</div>
-                    <div class="top-quotes-2__item">${data.QUOTE2}</div>
+                    <div class="top-quotes-2__item gsap-top-q2">${data.QUOTE1}</div>
+                    <div class="top-quotes-2__item gsap-top-q2">${data.QUOTE2}</div>
                 </div>
     
     `;
@@ -187,13 +187,13 @@ const framesHandler = (data, AUTOEVENT) => {
             hideStage(item);
         });
 
-        setTimeout(() => {
-            startAnimations(animationsAPI);
-        }, frameFadeDuration * 1000);
-
         frameApi.forEach((item) => {
             showStage(item);
         });
+
+        setTimeout(() => {
+            startAnimations(animationsAPI);
+        }, frameFadeDuration * 1000);
 
         setTimeout(() => {
             stopAnimations(animationsStatic);
