@@ -5,7 +5,12 @@ const framesHandler = (data, AUTOEVENT) => {
     const HEADER_FRAME_2 = document.getElementById("header-frame2");
     const LEFT_FRAME_1 = document.getElementById("left-frame1");
     const LEFT_FRAME_2 = document.getElementById("left-frame2");
-    // Время указываем в секундах
+    const RIGHT_FRAME_1 = document.getElementById("right-frame1");
+    const RIGHT_FRAME_2 = document.getElementById("right-frame2");
+
+    //////////////////////////////////////////////////////////////////////////////
+    // Durations. Время указываем в секундах
+    //////////////////////////////////////////////////////////////////////////////
     const ballAnimationDuration = 1.5;
 
     const frameFadeDuration = 0.3;
@@ -130,44 +135,55 @@ const framesHandler = (data, AUTOEVENT) => {
     `);
 
     //////////////////////////////////////////////////////////////////////////////
-    //  LEFT
+    //  ASIDES
     //////////////////////////////////////////////////////////////////////////////
-    const leftKEFS = Boolean(data.QUOTEX)
-        ? `
-    <div class="aside-quotes">
-        <div class="aside-quotes__item"><span>${data.QUOTE1}</span></div>
-        <div class="aside-quotes__item"><span>${data.QUOTEX}</span></div>
-        <div class="aside-quotes__item"><span>${data.QUOTE2}</span></div>
-    </div>  
-        `
-        : `
-   <div class="aside-one-kef"><span>${data.QUOTE1}</span></div>
-    `;
 
-    const leftFRAME2 = createElementFromHTML(`
-        <div>
-            <div class="aside__champ">${data.CHAMP}</div>
-            <div class="aside__datetime">
-                <span>${data.STARTDATE}</span>
-                /
-                <span>${data.STARTTIME}</span>
-            </div>
-            <div class="aside__teampic">
-                <img src="${data.LOGO2}" alt="" />
-            </div>
-            <div class="aside__teamname">${data.TEAM1}</div>
-            ${leftKEFS}
-        </div>     
-        `);
+    function createASIDEcontent(isLeft = true) {
+        const teamPic = isLeft ? `${data.LOGO1}` : `${data.LOGO2}`;
+        const teamName = isLeft ? `${data.TEAM1}` : `${data.TEAM2}`;
+        const singleKEF = isLeft ? `${data.QUOTE1}` : `${data.QUOTE2}`;
+
+        const KEFSoutput = Boolean(data.QUOTEX)
+            ? `
+            <div class="aside-quotes">
+                <div class="aside-quotes__item"><span>${data.QUOTE1}</span></div>
+                <div class="aside-quotes__item"><span>${data.QUOTEX}</span></div>
+                <div class="aside-quotes__item"><span>${data.QUOTE2}</span></div>
+            </div>  
+        `
+            : `
+            <div class="aside-one-kef"><span>${singleKEF}</span></div>
+`;
+
+        const createdFrame = createElementFromHTML(`
+    <div>
+        <div class="aside__champ">${data.CHAMP}</div>
+        <div class="aside__datetime">
+            <span>${data.STARTDATE}</span>
+            /
+            <span>${data.STARTTIME}</span>
+        </div>
+        <div class="aside__teampic">
+            <img src="${teamPic}" alt="" />
+        </div>
+         <div class="aside__teamname"><div class="aside__teamname">${teamName}</div></div>
+        ${KEFSoutput}
+    </div>     
+    `);
+
+        return createdFrame;
+    }
 
     //////////////////////////////////////////////////////////////////////////////
     //   Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
-    // showFrame__static(); // начальный запуск
+
     if (isData && AUTOEVENT) {
         showFrame__static(); // начальный запуск
         HEADER_FRAME_2.appendChild(headerFRAME2);
-        LEFT_FRAME_2.appendChild(leftFRAME2);
+        LEFT_FRAME_2.appendChild(createASIDEcontent(true));
+        RIGHT_FRAME_2.appendChild(createASIDEcontent(false));
+
         let i = false;
 
         setInterval(function () {
@@ -183,13 +199,6 @@ const framesHandler = (data, AUTOEVENT) => {
     ///// end if
 
     function showFrame__static() {
-        // HEADER_FRAME.innerHTML = "";
-        // HEADER_FRAME.appendChild(headerFRAME1);
-
-        // frameApi.forEach((item) => {
-        //     hideStage(item);
-        // });
-
         frameApi.forEach((item) => {
             hideStage(item);
         });
@@ -205,17 +214,11 @@ const framesHandler = (data, AUTOEVENT) => {
     }
 
     function showFrame__API() {
-        // HEADER_FRAME.innerHTML = "";
-        // HEADER_FRAME.appendChild(headerFRAME2);
         frameStatic.forEach((item) => {
             hideStage(item);
         });
 
         // startAnimations(animationsAPI);
-
-        // frameApi.forEach((item) => {
-        //     showStage(item);
-        // });
 
         frameApi.forEach((item) => {
             showStage(item);
