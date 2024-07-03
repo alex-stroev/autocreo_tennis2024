@@ -409,6 +409,10 @@ $midwidth: auto;
     display: flex;
     gap: 4px;
 
+    .only-2-quotes & {
+        display: none;
+    }
+
     .in-sports &,
     .in-championat & {
         width: $midwidth;
@@ -447,7 +451,11 @@ $midwidth: auto;
 /// 2
 /////////////////////////////////////////////////////////////////
 .top-quotes-2 {
-    display: flex;
+    display: none;
+
+    .only-2-quotes & {
+        display: flex;
+    }
 
     &__item {
         $brad: 2px;
@@ -458,6 +466,10 @@ $midwidth: auto;
         color: var(--bgcolor);
         line-height: 1;
         @include fluid_typo_auto($tbp, 14, 10);
+
+        span {
+            display: inline-block;
+        }
 
         &:first-child {
             border-radius: $brad 0 0 $brad;
@@ -471,7 +483,7 @@ $midwidth: auto;
 }
 
 /////////////////////////////////////////////////////////////////
-/// 
+///
 /////////////////////////////////////////////////////////////////
 .top-offer {
     text-align: center;

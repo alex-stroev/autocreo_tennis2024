@@ -1,7 +1,6 @@
 import { createElementFromHTML } from "./helpers";
 import { tlStaticHeaderOffer100, zzzqqq } from "./gsapAnimations";
 const framesHandler = (data, AUTOEVENT) => {
-    const BODY = document.body || document.getElementsByTagName("body")[0];
     const HEADER_FRAME_1 = document.getElementById("header-frame1");
     const HEADER_FRAME_2 = document.getElementById("header-frame2");
     const LEFT_FRAME_1 = document.getElementById("left-frame1");
@@ -48,62 +47,6 @@ const framesHandler = (data, AUTOEVENT) => {
     }
 
     //////////////////////////////////////////////////////////////////////////////
-    //  HEADER
-    //////////////////////////////////////////////////////////////////////////////
-
-    const headerKEFS = Boolean(data.QUOTEX)
-        ? `
-                <div class="top-quotes-3">
-                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTE1}</div>
-                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTEX}</div>
-                    <div class="top-quotes-3__item gsap-top-q3">${data.QUOTE2}</div>
-                </div>
-    `
-        : `
-            <div class="top-quotes-2">
-                    <div class="top-quotes-2__item gsap-top-q2">${data.QUOTE1}</div>
-                    <div class="top-quotes-2__item gsap-top-q2">${data.QUOTE2}</div>
-                </div>
-    
-    `;
-
-    const headerFRAME2 = createElementFromHTML(`
-    <div class="top-banner">
-        <div class="top-banner__team">${data.TEAM1}</div>
-        <div class="top-banner__pic">
-            <img src="${data.LOGO1}" alt="" />
-        </div>
-        <div class="top-banner__content">
-            <div class="top-banner__champ">${data.CHAMP}</div>
-            <div class="top-banner__time"><span>${data.STARTDATE}</span>/<span>${data.STARTTIME}</span></div>
-            <div class="top-banner__live">
-                <span>Live</span>
-            </div>
-
-            <div class="top-banner__lowwrapper">
-                <div class="large-header">
-                    <div class="large-header__top"><img src="img/lilball.png" alt="" width="36" height="36" /></div>
-                    <div class="large-header__teams">
-                        <div class="large-header__team">${data.TEAM1}</div>
-                        <div class="large-header__team">${data.TEAM2}</div>
-                    </div>
-                </div>
-                ${headerKEFS}
-            </div>
-        </div>
-        <div class="top-banner__pic">
-            <img src="${data.LOGO2}" alt="" />
-        </div>
-        <div class="top-banner__team">${data.TEAM2}</div>
-        <div class="top-banner__teams-mob">
-            <div>${data.TEAM1}</div>
-            <div>${data.TEAM2}</div>
-        </div>
-    </div>
-
-    `);
-
-    //////////////////////////////////////////////////////////////////////////////
     //  ASIDES
     //////////////////////////////////////////////////////////////////////////////
 
@@ -148,14 +91,13 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     if (isData && AUTOEVENT) {
-        // showFrame__static(); // начальный запуск
-        HEADER_FRAME_2.appendChild(headerFRAME2);
         LEFT_FRAME_2.appendChild(createASIDEcontent(true));
         RIGHT_FRAME_2.appendChild(createASIDEcontent(false));
 
         let i = false;
 
         // срабатывает через frameStageDuration
+
         setInterval(function () {
             i ? showFrame__static() : showFrame__API();
             i = !i;
@@ -193,7 +135,7 @@ const framesHandler = (data, AUTOEVENT) => {
 
         setTimeout(() => {
             startAnimations(animationsAPI);
-        }, frameFadeDuration * 1000);
+        }, frameFadeDuration * 1000 * 2);
 
         setTimeout(() => {
             stopAnimations(animationsStatic);

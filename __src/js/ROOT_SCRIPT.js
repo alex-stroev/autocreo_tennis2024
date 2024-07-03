@@ -14,7 +14,7 @@ const AUTOEVENT = 1; // флаг переключает анимацию дву�
 const CHECKSTATIC = {
     STATIC_OGJ: true,
 };
-
+const BODY = document.body || document.getElementsByTagName("body")[0];
 window.addEventListener("DOMContentLoaded", function () {
     // Если инфа из статики, то запускам просто runautobet();
 
@@ -61,7 +61,7 @@ function runautobet(event) {
         STARTHUMDAY: "Сегодня",
         LIVE: false,
         QUOTE1: "4.51",
-        QUOTEX: "333",
+        QUOTEX: "1.11",
         QUOTE2: "1.20",
         LINK: "https://betcity.ru/ru/line/tennis/4105/16394763",
         AMOUNT: "2 000 ",
@@ -114,11 +114,11 @@ function runautobet(event) {
         // console.log("data.PROMOCODE:" + Boolean(data.PROMOCODE));
 
         if (!data.PROMOCODE) {
-            document.body.classList.add("has-no-promocode");
+            BODY.classList.add("has-no-promocode");
             return;
         }
 
-        document.body.classList.add("has-promocode");
+        BODY.classList.add("has-promocode");
     }
 
     function hasEvent() {
@@ -129,14 +129,17 @@ function runautobet(event) {
             return;
         }
 
+        BODY.classList.add("has-event");
 
-        document.body.classList.add("has-event");
+        if (!data.QUOTEX) {
+            BODY.classList.add("only-2-quotes");
+        }
 
         if (!data.LIVE) {
-            document.body.classList.add("live-not-avaliable");
+            BODY.classList.add("live-not-avaliable");
         } else {
             // console.log("Live");
-            document.body.classList.add("live-is-avaliable");
+            BODY.classList.add("live-is-avaliable");
         }
     }
 }
