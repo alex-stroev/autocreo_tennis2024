@@ -451,11 +451,11 @@ $midwidth: auto;
 /// 2
 /////////////////////////////////////////////////////////////////
 .top-quotes-2 {
-    display: none;
-
     .only-2-quotes & {
         display: flex;
+        overflow: hidden;
     }
+    display: none;
 
     &__item {
         $brad: 2px;

@@ -1,9 +1,5 @@
-import { createElementFromHTML } from "./helpers";
-import { tlStaticHeaderOffer, zzzqqq } from "./gsapAnimations";
+import { tlStaticHeaderOffer, tlTOPquotes3, tlTOPquotes2 } from "./gsapAnimations";
 const framesHandler = (data, AUTOEVENT) => {
-    const LEFT_FRAME_2 = document.getElementById("left-frame2");
-    const RIGHT_FRAME_2 = document.getElementById("right-frame2");
-
     //////////////////////////////////////////////////////////////////////////////
     // Durations. Время указываем в секундах
     //////////////////////////////////////////////////////////////////////////////
@@ -23,11 +19,18 @@ const framesHandler = (data, AUTOEVENT) => {
     const repeatCase = isData && AUTOEVENT;
 
     //////////////////////////////////////////////////////////////////////////////
+    //  Запускаем loop для выбранных анимаций
+    //////////////////////////////////////////////////////////////////////////////
+    if (repeatCase) {
+        loopAnimations([tlStaticHeaderOffer]);
+    }
+
+    //////////////////////////////////////////////////////////////////////////////
     //  Для запуска/остановки прописываем все таймлайны в массивы
     //////////////////////////////////////////////////////////////////////////////
     //
     const animationsStatic = [tlStaticHeaderOffer];
-    const animationsAPI = [zzzqqq];
+    const animationsAPI = [tlTOPquotes3, tlTOPquotes2];
 
     //////////////////////////////////////////////////////////////////////////////
     //  Убираем лишнюю точку в конце чемпионата
@@ -38,53 +41,14 @@ const framesHandler = (data, AUTOEVENT) => {
     }
 
     //////////////////////////////////////////////////////////////////////////////
-    //  ASIDES
+    //
     //////////////////////////////////////////////////////////////////////////////
-
-    function createASIDEcontent(isLeft = true) {
-        const teamPic = isLeft ? `${data.LOGO1}` : `${data.LOGO2}`;
-        const teamName = isLeft ? `${data.TEAM1}` : `${data.TEAM2}`;
-        const singleKEF = isLeft ? `${data.QUOTE1}` : `${data.QUOTE2}`;
-
-        const KEFSoutput = Boolean(data.QUOTEX)
-            ? `
-            <div class="aside-quotes">
-                <div class="aside-quotes__item"><span>${data.QUOTE1}</span></div>
-                <div class="aside-quotes__item"><span>${data.QUOTEX}</span></div>
-                <div class="aside-quotes__item"><span>${data.QUOTE2}</span></div>
-            </div>  
-        `
-            : `
-            <div class="aside-one-kef"><span>${singleKEF}</span></div>
-`;
-
-        const createdFrame = createElementFromHTML(`
-    <div>
-        <div class="aside__champ">${data.CHAMP}</div>
-        <div class="aside__datetime">
-            <span>${data.STARTDATE}</span>
-            /
-            <span>${data.STARTTIME}</span>
-        </div>
-        <div class="aside__teampic">
-            <img src="${teamPic}" alt="" />
-        </div>
-         <div class="aside__teamname"><div class="aside__teamname">${teamName}</div></div>
-        ${KEFSoutput}
-    </div>     
-    `);
-
-        return createdFrame;
-    }
 
     //////////////////////////////////////////////////////////////////////////////
     //  Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
 
     if (isData && AUTOEVENT) {
-        LEFT_FRAME_2.appendChild(createASIDEcontent(true));
-        RIGHT_FRAME_2.appendChild(createASIDEcontent(false));
-
         let i = false;
 
         // срабатывает через frameStageDuration
@@ -182,6 +146,14 @@ const framesHandler = (data, AUTOEVENT) => {
     function stopAnimations(x) {
         x.forEach((item) => {
             item.pause(0);
+        });
+    }
+
+    function loopAnimations(x) {
+        x.forEach((item) => {
+            item.repeat(1);
+            item.yoyo(true);
+            item.repeatDelay(ballAnimationDuration);
         });
     }
 

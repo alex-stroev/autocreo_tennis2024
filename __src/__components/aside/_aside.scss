@@ -8,7 +8,7 @@
 
     &__gsap-frames {
         position: relative;
-        height: 400px;
+        height: $aside-frame-height;
     }
 
     .b2000 {
@@ -111,12 +111,11 @@
 // на 3 кэфа
 /////////////////////////////////////////////////////////////////////////////
 .aside-quotes {
-    // .two-teams & {
-    //     display: none;
-    // }
+    .only-2-quotes & {
+        display: none;
+    }
 
     $brad: 3px;
-    // display: inline-flex;
     display: flex;
     width: 100%;
     color: var(--bgcolor);
@@ -181,6 +180,12 @@
 // на 2 кэфа (выводится один)
 /////////////////////////////////////////////////////////////////////////////
 .aside-one-kef {
+    display: none;
+
+    .only-2-quotes & {
+        display: block;
+    }
+
     text-align: center;
     margin-top: 20px;
 
