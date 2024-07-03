@@ -43,6 +43,10 @@
             // width: 80px;
             // height: 175px;
         }
+
+        .i-aside-right & {
+            transform: scaleY(-1);
+        }
     }
 
     &__promo {
