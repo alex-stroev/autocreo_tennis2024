@@ -3,6 +3,8 @@ const framesHandler = (data, AUTOEVENT) => {
     const BODY = document.body || document.getElementsByTagName("body")[0];
     const HEADER_FRAME_1 = document.getElementById("header-frame1");
     const HEADER_FRAME_2 = document.getElementById("header-frame2");
+    const LEFT_FRAME_1 = document.getElementById("left-frame1");
+    const LEFT_FRAME_2 = document.getElementById("left-frame2");
     // Время указываем в секундах
     const ballAnimationDuration = 1.5;
 
@@ -84,6 +86,9 @@ const framesHandler = (data, AUTOEVENT) => {
     ///////////////////////////////////
     // const headerFRAME1 = createElementFromHTML(HEADER_FRAME_1.innerHTML); // забираем при инициализации
 
+    //////////////////////////////////////////////////////////////////////////////
+    //  HEADER
+    //////////////////////////////////////////////////////////////////////////////
     const headerFRAME2 = createElementFromHTML(`
     <div class="top-banner">
         <div class="top-banner__team">${data.TEAM1}</div>
@@ -125,12 +130,44 @@ const framesHandler = (data, AUTOEVENT) => {
     `);
 
     //////////////////////////////////////////////////////////////////////////////
+    //  LEFT
+    //////////////////////////////////////////////////////////////////////////////
+    const leftKEFS = Boolean(data.QUOTEX)
+        ? `
+    <div class="aside-quotes">
+        <div class="aside-quotes__item"><span>${data.QUOTE1}</span></div>
+        <div class="aside-quotes__item"><span>${data.QUOTEX}</span></div>
+        <div class="aside-quotes__item"><span>${data.QUOTE2}</span></div>
+    </div>  
+        `
+        : `
+   <div class="aside-one-kef"><span>${data.QUOTE1}</span></div>
+    `;
+
+    const leftFRAME2 = createElementFromHTML(`
+        <div>
+            <div class="aside__champ">${data.CHAMP}</div>
+            <div class="aside__datetime">
+                <span>${data.STARTDATE}</span>
+                /
+                <span>${data.STARTTIME}</span>
+            </div>
+            <div class="aside__teampic">
+                <img src="${data.LOGO2}" alt="" />
+            </div>
+            <div class="aside__teamname">${data.TEAM1}</div>
+            ${leftKEFS}
+        </div>     
+        `);
+
+    //////////////////////////////////////////////////////////////////////////////
     //   Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
     // showFrame__static(); // начальный запуск
     if (isData && AUTOEVENT) {
         showFrame__static(); // начальный запуск
         HEADER_FRAME_2.appendChild(headerFRAME2);
+        LEFT_FRAME_2.appendChild(leftFRAME2);
         let i = false;
 
         setInterval(function () {
@@ -200,9 +237,9 @@ const framesHandler = (data, AUTOEVENT) => {
             opacity: 1,
             delay: frameFadeDuration,
 
-            onComplete() {
-                x.style.position = "relative";
-            },
+            // onComplete() {
+            //     x.style.position = "relative";
+            // },
         });
     }
 
