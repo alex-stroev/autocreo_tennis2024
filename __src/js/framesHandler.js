@@ -11,6 +11,7 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     // Durations. Время указываем в секундах
     //////////////////////////////////////////////////////////////////////////////
+
     const ballAnimationDuration = 1.5;
 
     const frameFadeDuration = 0.3;
@@ -92,8 +93,33 @@ const framesHandler = (data, AUTOEVENT) => {
     // const headerFRAME1 = createElementFromHTML(HEADER_FRAME_1.innerHTML); // забираем при инициализации
 
     //////////////////////////////////////////////////////////////////////////////
+    //  Убираем лишнюю точку в конце чемпионата
+    //////////////////////////////////////////////////////////////////////////////
+
+    if (data.CHAMP && data.CHAMP.split(".")[1] && data.CHAMP.split(".")[1].trim() === "") {
+        data.CHAMP = data.CHAMP.split(".")[0];
+    }
+
+    //////////////////////////////////////////////////////////////////////////////
     //  HEADER
     //////////////////////////////////////////////////////////////////////////////
+
+    const headerKEFS = Boolean(data.QUOTEX)
+        ? `
+                <div class="top-quotes-3">
+                    <div class="top-quotes-3__item">${data.QUOTE1}</div>
+                    <div class="top-quotes-3__item">${data.QUOTEX}</div>
+                    <div class="top-quotes-3__item">${data.QUOTE2}</div>
+                </div>
+    `
+        : `
+            <div class="top-quotes-2">
+                    <div class="top-quotes-2__item">${data.QUOTE1}</div>
+                    <div class="top-quotes-2__item">${data.QUOTE2}</div>
+                </div>
+    
+    `;
+
     const headerFRAME2 = createElementFromHTML(`
     <div class="top-banner">
         <div class="top-banner__team">${data.TEAM1}</div>
@@ -115,11 +141,7 @@ const framesHandler = (data, AUTOEVENT) => {
                         <div class="large-header__team">${data.TEAM2}</div>
                     </div>
                 </div>
-                <div class="top-quotes">
-                    <div class="top-quotes__item">${data.QUOTE1}</div>
-                    <div class="top-quotes__item">${data.QUOTEX}</div>
-                    <div class="top-quotes__item">${data.QUOTE2}</div>
-                </div>
+                ${headerKEFS}
             </div>
         </div>
         <div class="top-banner__pic">

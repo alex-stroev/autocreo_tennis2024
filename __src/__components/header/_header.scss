@@ -72,7 +72,6 @@ $midwidth: auto;
         align-items: center;
         text-align: center;
         flex: 100 100 0;
-        background-color: darkorange;
         position: relative;
     }
 
@@ -89,7 +88,6 @@ $midwidth: auto;
 
     &__static {
         width: 100%;
-        background-color: red;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -225,7 +223,8 @@ $midwidth: auto;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    margin: 0 auto;
+    // width: 100%;
 
     @media (max-width: $mobile) {
         display: flex;
@@ -272,9 +271,9 @@ $midwidth: auto;
         font-weight: 900;
         color: var(--emph);
 
-        font-size: 15px;
+        font-size: 14px;
         line-height: (18/15);
-        @include fluid_typo_auto($tbp, 15, 12);
+        @include fluid_typo_auto($tbp, 14, 12);
 
         &:first-child {
             text-align: right;
@@ -316,7 +315,8 @@ $midwidth: auto;
     }
 
     &__content {
-        flex: 2 2 0;
+        // flex: 2 2 0;
+        flex: 1 1 0;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -330,7 +330,7 @@ $midwidth: auto;
 
     &__champ {
         font-weight: 900;
-        font-size: 12px;
+        font-size: 10px;
         line-height: calc(17 / 14);
         text-align: center;
         color: var(--emph);
@@ -377,12 +377,12 @@ $midwidth: auto;
         }
 
         padding: 2px 4px;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 900;
         text-transform: uppercase;
 
         span {
-            $s: 10px;
+            $s: 8px;
             white-space: nowrap;
             &::after {
                 content: "";
@@ -393,6 +393,7 @@ $midwidth: auto;
                 background-color: var(--red);
                 position: relative;
                 margin-left: 0.5em;
+                top: 0.1em;
             }
         }
     }
@@ -402,7 +403,7 @@ $midwidth: auto;
     // }
 }
 
-.top-quotes {
+.top-quotes-3 {
     display: flex;
     gap: 4px;
 
@@ -410,10 +411,6 @@ $midwidth: auto;
     .in-championat & {
         width: $midwidth;
         justify-content: space-between;
-    }
-
-    .two-teams & {
-        display: none;
     }
 
     &__item {
@@ -442,6 +439,29 @@ $midwidth: auto;
         // .in-championat & {
         //     padding: 0.25em 1em;
         // }
+    }
+}
+
+.top-quotes-2 {
+    display: flex;
+
+    &__item {
+        $brad: 2px;
+        font-weight: 400;
+        font-size: 14px;
+        padding: (4em/14) (12em/14) (3em/14);
+        background-color: #fff;
+        color: var(--bgcolor);
+        line-height: 1;
+
+        &:first-child {
+            border-radius: $brad 0 0 $brad;
+            border-right: 1px solid var(--bgcolor);
+        }
+
+        &:last-child {
+            border-radius: 0 $brad $brad 0;
+        }
     }
 }
 

@@ -45,7 +45,7 @@ function runautobet(event) {
         CH: 4105,
         SP: 2,
         SPORT: "Теннис",
-        CHAMP: "Уимблдон.",
+        CHAMP: "Уимблдон. ",
         EVENT: "Дэниел Эванс - Алехандро Табило",
         TEAM1: "Дэниел Эванс",
         VS: "Ничья",
@@ -59,9 +59,9 @@ function runautobet(event) {
         STARTMONTH: "Июля",
         STARTWEEKDAY: "Среда",
         STARTHUMDAY: "Сегодня",
-        LIVE: false,
+        LIVE: true,
         QUOTE1: "4.51",
-        QUOTEX: "1.11",
+        QUOTEX: "",
         QUOTE2: "1.20",
         LINK: "https://betcity.ru/ru/line/tennis/4105/16394763",
         AMOUNT: "2 000 ",
@@ -129,9 +129,6 @@ function runautobet(event) {
             return;
         }
 
-        if (data.QUOTEX === "") {
-            document.body.classList.add("two-teams");
-        }
 
         document.body.classList.add("has-event");
 
