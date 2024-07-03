@@ -1,8 +1,8 @@
 import { createElementFromHTML } from "./helpers";
 const framesHandler = (data, AUTOEVENT) => {
     const BODY = document.body || document.getElementsByTagName("body")[0];
-    const HEADER_FRAME = document.getElementById("header-frame");
-
+    const HEADER_FRAME_1 = document.getElementById("header-frame1");
+    const HEADER_FRAME_2 = document.getElementById("header-frame2");
     // Время указываем в секундах
     const ballAnimationDuration = 1.5;
 
@@ -82,10 +82,10 @@ const framesHandler = (data, AUTOEVENT) => {
     // BODY.classList.add("body-frame-1");
 
     ///////////////////////////////////
-    const headerFRAME1 = createElementFromHTML(HEADER_FRAME.innerHTML); // забираем при инициализации
+    // const headerFRAME1 = createElementFromHTML(HEADER_FRAME_1.innerHTML); // забираем при инициализации
 
     const headerFRAME2 = createElementFromHTML(`
-    <div class="top-banner i-gsap-frame--api">
+    <div class="top-banner">
         <div class="top-banner__team">${data.TEAM1}</div>
         <div class="top-banner__pic">
             <img src="${data.LOGO1}" alt="" />
@@ -130,7 +130,7 @@ const framesHandler = (data, AUTOEVENT) => {
     // showFrame__static(); // начальный запуск
     if (isData && AUTOEVENT) {
         showFrame__static(); // начальный запуск
-        HEADER_FRAME.appendChild(headerFRAME2);
+        HEADER_FRAME_2.appendChild(headerFRAME2);
         let i = false;
 
         setInterval(function () {
@@ -149,12 +149,11 @@ const framesHandler = (data, AUTOEVENT) => {
         // HEADER_FRAME.innerHTML = "";
         // HEADER_FRAME.appendChild(headerFRAME1);
 
-
         // frameApi.forEach((item) => {
         //     hideStage(item);
         // });
 
-        document.querySelectorAll(".i-gsap-frame--api").forEach((item) => {
+        frameApi.forEach((item) => {
             hideStage(item);
         });
 
@@ -181,7 +180,7 @@ const framesHandler = (data, AUTOEVENT) => {
         //     showStage(item);
         // });
 
-        document.querySelectorAll(".i-gsap-frame--api").forEach((item) => {
+        frameApi.forEach((item) => {
             showStage(item);
         });
 
