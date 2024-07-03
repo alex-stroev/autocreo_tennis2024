@@ -1,11 +1,7 @@
 import { createElementFromHTML } from "./helpers";
-import { tlStaticHeaderOffer100, zzzqqq } from "./gsapAnimations";
+import { tlStaticHeaderOffer, zzzqqq } from "./gsapAnimations";
 const framesHandler = (data, AUTOEVENT) => {
-    const HEADER_FRAME_1 = document.getElementById("header-frame1");
-    const HEADER_FRAME_2 = document.getElementById("header-frame2");
-    const LEFT_FRAME_1 = document.getElementById("left-frame1");
     const LEFT_FRAME_2 = document.getElementById("left-frame2");
-    const RIGHT_FRAME_1 = document.getElementById("right-frame1");
     const RIGHT_FRAME_2 = document.getElementById("right-frame2");
 
     //////////////////////////////////////////////////////////////////////////////
@@ -22,21 +18,16 @@ const framesHandler = (data, AUTOEVENT) => {
 
     //
     const frameStatic = document.querySelectorAll(".i-gsap-frame--static");
-    const frameApi = document.querySelectorAll(".i-gsap-frame--api"); // При APPEND не инициализируется
+    const frameApi = document.querySelectorAll(".i-gsap-frame--api");
     const isData = Boolean(data.CHAMP);
     const repeatCase = isData && AUTOEVENT;
 
-    // Паузим только если есть данные
-    const paused = isData;
-    // console.log("paused: " + paused);
-
-    // Для запуска прописываем все таймлайны в массив
-    const animationsStatic = [tlStaticHeaderOffer100];
-    const animationsAPI = [zzzqqq];
-
     //////////////////////////////////////////////////////////////////////////////
-    // запускаем анимацию статического кадра в любом случае
-    startAnimations(animationsStatic);
+    //  Для запуска/остановки прописываем все таймлайны в массивы
+    //////////////////////////////////////////////////////////////////////////////
+    //
+    const animationsStatic = [tlStaticHeaderOffer];
+    const animationsAPI = [zzzqqq];
 
     //////////////////////////////////////////////////////////////////////////////
     //  Убираем лишнюю точку в конце чемпионата
@@ -87,7 +78,7 @@ const framesHandler = (data, AUTOEVENT) => {
     }
 
     //////////////////////////////////////////////////////////////////////////////
-    //   Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
+    //  Переключение кадров (запускается только при наличии DATA) и при флаге AUTOEVENT
     //////////////////////////////////////////////////////////////////////////////
 
     if (isData && AUTOEVENT) {
@@ -105,6 +96,10 @@ const framesHandler = (data, AUTOEVENT) => {
     }
 
     ///// end if
+
+    //////////////////////////////////////////////////////////////////////////////
+    //  Кадр 1
+    //////////////////////////////////////////////////////////////////////////////
 
     function showFrame__static() {
         frameApi.forEach((item) => {
@@ -124,6 +119,10 @@ const framesHandler = (data, AUTOEVENT) => {
         }, frameFadeDuration * 1000);
     }
 
+    //////////////////////////////////////////////////////////////////////////////
+    //  Кадр 2
+    //////////////////////////////////////////////////////////////////////////////
+
     function showFrame__API() {
         frameStatic.forEach((item) => {
             hideStage(item);
@@ -135,7 +134,7 @@ const framesHandler = (data, AUTOEVENT) => {
 
         setTimeout(() => {
             startAnimations(animationsAPI);
-        }, frameFadeDuration * 1000 * 2);
+        }, frameFadeDuration * 1000);
 
         setTimeout(() => {
             stopAnimations(animationsStatic);
