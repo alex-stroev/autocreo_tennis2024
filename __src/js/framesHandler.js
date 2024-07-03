@@ -49,32 +49,32 @@ const framesHandler = (data, AUTOEVENT) => {
     // Для запуска прописываем все таймлайны в массив
     const animationsStatic = [tlStaticHeaderOffer100, tlStaticAsideOffers2000];
 
-    //////////////////////////////////////////////////////////////////////////////
-    //   Анимации для  кадра с данными
-    //////////////////////////////////////////////////////////////////////////////
-    const tlAPIheaderCHAMP = gsap.timeline({ paused: paused });
-    // const tlAPIheaderGETBONUS = gsap.timeline({ paused: paused });
-    const tlAPIheaderQuotes = gsap.timeline({ paused: paused });
-    const topAPIball = gsap.timeline({ paused: paused });
-    const tlAPIasideQuotesLeft = gsap.timeline({ paused: paused });
-    const tlAPIasideQuotesRight = gsap.timeline({ paused: paused });
-    const tlAPIasideTshirtLeft = gsap.timeline({ paused: paused });
-    const tlAPIasideTshirtRight = gsap.timeline({ paused: paused });
+    // //////////////////////////////////////////////////////////////////////////////
+    // //   Анимации для  кадра с данными
+    // //////////////////////////////////////////////////////////////////////////////
+    // const tlAPIheaderCHAMP = gsap.timeline({ paused: paused });
+    // // const tlAPIheaderGETBONUS = gsap.timeline({ paused: paused });
+    // const tlAPIheaderQuotes = gsap.timeline({ paused: paused });
+    // const topAPIball = gsap.timeline({ paused: paused });
+    // const tlAPIasideQuotesLeft = gsap.timeline({ paused: paused });
+    // const tlAPIasideQuotesRight = gsap.timeline({ paused: paused });
+    // const tlAPIasideTshirtLeft = gsap.timeline({ paused: paused });
+    // const tlAPIasideTshirtRight = gsap.timeline({ paused: paused });
 
-    tlAPIheaderCHAMP.from(".top-banner__champ", { y: "-100%", autoAlpha: 0, duration: 0.5, delay: frameFadeDuration });
-    tlAPIheaderQuotes.from(".top-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
+    // tlAPIheaderCHAMP.from(".top-banner__champ", { y: "-100%", autoAlpha: 0, duration: 0.5, delay: frameFadeDuration });
+    // tlAPIheaderQuotes.from(".top-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
 
-    // topAPIball.from(".large-header__top img", { y: "-1500%", autoAlpha: 0, duration: 3, ease: "bounce.out"});
-    topAPIball.to(".large-header__top img", { y: "-30%", duration: frameStageDuration / 5, repeat: 4, yoyo: true });
+    // // topAPIball.from(".large-header__top img", { y: "-1500%", autoAlpha: 0, duration: 3, ease: "bounce.out"});
+    // topAPIball.to(".large-header__top img", { y: "-30%", duration: frameStageDuration / 5, repeat: 4, yoyo: true });
 
-    tlAPIasideQuotesLeft.from(".i-aside-left .aside-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
-    tlAPIasideQuotesRight.from(".i-aside-right .aside-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
+    // tlAPIasideQuotesLeft.from(".i-aside-left .aside-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
+    // tlAPIasideQuotesRight.from(".i-aside-right .aside-quotes__item span", { y: "-100%", autoAlpha: 0, duration: 0.5, stagger: 0.2, delay: frameFadeDuration });
 
-    tlAPIasideTshirtLeft.from(".i-aside-left .aside__teampic img", { x: "120%", autoAlpha: 0, duration: 0.4, delay: frameFadeDuration, repeat: 1, yoyo: true, repeatDelay: frame2duration });
-    tlAPIasideTshirtRight.from(".i-aside-right .aside__teampic img", { x: "-120%", autoAlpha: 0, duration: 0.4, delay: frameFadeDuration, repeat: 1, yoyo: true, repeatDelay: frame2duration });
+    // tlAPIasideTshirtLeft.from(".i-aside-left .aside__teampic img", { x: "120%", autoAlpha: 0, duration: 0.4, delay: frameFadeDuration, repeat: 1, yoyo: true, repeatDelay: frame2duration });
+    // tlAPIasideTshirtRight.from(".i-aside-right .aside__teampic img", { x: "-120%", autoAlpha: 0, duration: 0.4, delay: frameFadeDuration, repeat: 1, yoyo: true, repeatDelay: frame2duration });
 
-    // Для запуска прописываем все таймлайны в массив
-    const animationsAPI = [tlAPIheaderCHAMP, tlAPIheaderQuotes, tlAPIasideQuotesLeft, tlAPIasideQuotesRight, tlAPIasideTshirtLeft, tlAPIasideTshirtRight, topAPIball];
+    // // Для запуска прописываем все таймлайны в массив
+    // const animationsAPI = [tlAPIheaderCHAMP, tlAPIheaderQuotes, tlAPIasideQuotesLeft, tlAPIasideQuotesRight, tlAPIasideTshirtLeft, tlAPIasideTshirtRight, topAPIball];
 
     //////////////////////////////////////////////////////////////////////////////
     // запускаем анимацию статического кадра в любом случае

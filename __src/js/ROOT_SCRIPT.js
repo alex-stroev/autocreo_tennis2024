@@ -1,13 +1,12 @@
 import { _toConsumableArray, _objectSpread } from "./APIhelpers";
-import { createElementFromHTML } from "./helpers";
 import { framesHandler } from "./framesHandler";
 
 ///////////////////////////////////////////////////////
 // Флаги
 ///////////////////////////////////////////////////////
 const DEVMODE = 1; // флаг переключает вывод веселых разноцветных консолек (1 - есть инфа в консоли, 0 - нет инфы в консоли)
-const CHAMPIONAT_STATIC = 1; // флаг переключает вывод инфы из статического объекта (1 - из предварительно спертого объекта, т.е. для чемпионата, 0 -  из API). Не забываем для чемпионата ставить нужный класс в Body и убирать подключение autobet.js
-const AUTOEVENT = 1; // флаг переключает анимацию двух кадров (1 - два кадра, 0 - один кадр)
+const FROM_STATIC_OBJECT = 1; // флаг переключает вывод инфы из статического объекта (1 - из предварительно спертого объекта, т.е. для чемпионата, 0 -  из API). Не забываем для чемпионата ставить нужный класс в Body и убирать подключение autobet.js
+const AUTOEVENT = 0; // флаг переключает анимацию двух кадров (1 - два кадра, 0 - один кадр)
 
 ///////////////////////////////////////////////////////
 // чисто для отладки
@@ -17,13 +16,9 @@ const CHECKSTATIC = {
 };
 
 window.addEventListener("DOMContentLoaded", function () {
-    // autobet.promise.then(function (data) {
-    //     runautobet(data);
-    // });
+    // Если инфа из статики, то запускам просто runautobet();
 
-    // Если чемпионат, то запускам просто runautobet();
-
-    if (CHAMPIONAT_STATIC) {
+    if (FROM_STATIC_OBJECT) {
         runautobet();
     } else {
         autobet.promise.then(function (data) {
@@ -66,7 +61,7 @@ function runautobet(event) {
         STARTHUMDAY: "Сегодня",
         LIVE: false,
         QUOTE1: "4.51",
-        QUOTEX: "",
+        QUOTEX: "333",
         QUOTE2: "1.20",
         LINK: "https://betcity.ru/ru/line/tennis/4105/16394763",
         AMOUNT: "2 000 ",
@@ -74,7 +69,7 @@ function runautobet(event) {
         PROMOCODE: "2000BET",
     };
 
-    if (CHAMPIONAT_STATIC) {
+    if (FROM_STATIC_OBJECT) {
         //ставим статический объект
         data = { ...CHECKSTATIC, ...preCapturedDATA };
     } else {

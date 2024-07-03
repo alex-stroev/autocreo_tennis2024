@@ -13,6 +13,7 @@ $content-width-soccer-small: 1183px;
 $soccer_bp: 1626px;
 //
 // $aside-width: 150px;
+// $aside-width: 150px;
 $aside-width: 150px;
 $aside_sidepad: 8px;
 $toggle: calc($content-width-lr + $aside-width * 2);
@@ -316,6 +317,10 @@ body {
     }
 }
 
+//////////////////////////////////////////////////////////
+///
+//////////////////////////////////////////////////////////
+
 .i-gsap-frame {
     &--static {
         position: absolute;
@@ -333,7 +338,5 @@ body {
 
         display: none;
         opacity: 0;
-
-        background-color: yellow;
     }
 }
