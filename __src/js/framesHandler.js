@@ -148,21 +148,18 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     if (isData && AUTOEVENT) {
-        showFrame__static(); // начальный запуск
+        // showFrame__static(); // начальный запуск
         HEADER_FRAME_2.appendChild(headerFRAME2);
         LEFT_FRAME_2.appendChild(createASIDEcontent(true));
         RIGHT_FRAME_2.appendChild(createASIDEcontent(false));
 
         let i = false;
 
+        // срабатывает через frameStageDuration
         setInterval(function () {
-            // срабатывает через frameStageDuration
             i ? showFrame__static() : showFrame__API();
             i = !i;
         }, frameStageDuration * 1000);
-    } else {
-        // если нет даннных, просто запускаем анимацию статического кадра
-        // startAnimations(animationsStatic);
     }
 
     ///// end if
