@@ -59,7 +59,7 @@ function runautobet(event) {
         STARTMONTH: "Июля",
         STARTWEEKDAY: "Среда",
         STARTHUMDAY: "Сегодня",
-        LIVE: true,
+        LIVE: false,
         QUOTE1: "4.51",
         QUOTEX: "333",
         QUOTE2: "1.20",
