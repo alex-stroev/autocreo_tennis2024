@@ -43,7 +43,7 @@ const framesHandler = (data, AUTOEVENT) => {
     tlStaticHeaderOffer100.from(".gsap-top-2", { autoAlpha: 0 });
     tlStaticHeaderGETBONUS.from(".header__getbonus", { autoAlpha: 0 }); // запускаеи ОДИН РАЗ, в цикл НЕ включаем
 
-    tlStaticAsideOffers2000.from(".aside__promo", { autoAlpha: 0 });
+    // tlStaticAsideOffers2000.from(".aside__promo", { autoAlpha: 0 });
     tlStaticAsideOffers2000.from(".gsap-aside-1", { y: "-100%", autoAlpha: 0 });
 
     // Для запуска прописываем все таймлайны в массив
