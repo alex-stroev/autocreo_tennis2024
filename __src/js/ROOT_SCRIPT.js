@@ -61,7 +61,7 @@ function runautobet(event) {
         STARTHUMDAY: "Сегодня",
         LIVE: true,
         QUOTE1: "4.51",
-        QUOTEX: "",
+        QUOTEX: "333",
         QUOTE2: "1.20",
         LINK: "https://betcity.ru/ru/line/tennis/4105/16394763",
         AMOUNT: "2 000 ",

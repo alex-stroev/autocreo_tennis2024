@@ -402,7 +402,9 @@ $midwidth: auto;
     //     background-color: darkcyan;
     // }
 }
-
+/////////////////////////////////////////////////////////////////
+/// 3
+/////////////////////////////////////////////////////////////////
 .top-quotes-3 {
     display: flex;
     gap: 4px;
@@ -432,7 +434,6 @@ $midwidth: auto;
             flex: 1 1 0;
 
             font-size: 14px;
-            font-size: 14px;
             @include fluid_typo_auto($tbp, 14, 10);
         }
 
@@ -442,6 +443,9 @@ $midwidth: auto;
     }
 }
 
+/////////////////////////////////////////////////////////////////
+/// 2
+/////////////////////////////////////////////////////////////////
 .top-quotes-2 {
     display: flex;
 
@@ -453,6 +457,7 @@ $midwidth: auto;
         background-color: #fff;
         color: var(--bgcolor);
         line-height: 1;
+        @include fluid_typo_auto($tbp, 14, 10);
 
         &:first-child {
             border-radius: $brad 0 0 $brad;
@@ -465,6 +470,9 @@ $midwidth: auto;
     }
 }
 
+/////////////////////////////////////////////////////////////////
+/// 
+/////////////////////////////////////////////////////////////////
 .top-offer {
     text-align: center;
     font-size: 10px;
