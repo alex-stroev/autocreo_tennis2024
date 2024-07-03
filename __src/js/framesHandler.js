@@ -1,5 +1,5 @@
 import { createElementFromHTML } from "./helpers";
-const gsapAnimations = (data, AUTOEVENT) => {
+const framesHandler = (data, AUTOEVENT) => {
     const BODY = document.body || document.getElementsByTagName("body")[0];
     const HEADER_FRAME = document.getElementById("header-frame");
 
@@ -239,4 +239,4 @@ const gsapAnimations = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////// end module
 };
 
-export { gsapAnimations };
+export { framesHandler };

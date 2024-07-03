@@ -1,6 +1,7 @@
 import { _toConsumableArray, _objectSpread } from "./APIhelpers";
 import { createElementFromHTML } from "./helpers";
-import { gsapAnimations } from "./gsapAnimations";
+import { framesHandler } from "./framesHandler";
+
 
 ///////////////////////////////////////////////////////
 // Флаги
@@ -81,7 +82,7 @@ function runautobet(event) {
         data = _objectSpread(_objectSpread({}, ev), autobet.fields);
     }
 
-    gsapAnimations(data, AUTOEVENT);
+    framesHandler(data, AUTOEVENT);
 
     DEVMODE && console.log(data);
     init();
