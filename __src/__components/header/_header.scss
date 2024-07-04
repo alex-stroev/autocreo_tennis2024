@@ -217,9 +217,9 @@ $midwidth: auto;
             color: var(--emph);
         }
 
-        .body-frame-2 & {
-            display: none;
-        }
+        // .body-frame-2 & {
+        //     display: none;
+        // }
     }
 }
 
@@ -583,5 +583,12 @@ $midwidth: auto;
             padding-bottom: 4px;
             @include fluid_typo_auto($tbp, 12, 10);
         }
+    }
+}
+
+
+.in-body-1 {
+    .body-frame-2 & {
+        display: none;
     }
 }

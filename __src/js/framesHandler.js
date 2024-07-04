@@ -1,5 +1,7 @@
 import { tlStaticHeaderOffer, tlHeaderRightBonus } from "./GSAPanimations_frame1";
 import { tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r, tlASIDEquotes2r, tlASIDEquotes2 } from "./GSAPanimations_frame2";
+const BODY = document.body || document.getElementsByTagName("body")[0];
+
 const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     // Durations. Время указываем в секундах
@@ -30,7 +32,7 @@ const framesHandler = (data, AUTOEVENT) => {
     //  Для запуска/остановки прописываем все таймлайны в массивы
     //////////////////////////////////////////////////////////////////////////////
     //
-    const animationsOnce = [tlHeaderRightBonus]
+    const animationsOnce = [tlHeaderRightBonus];
     const animationsStatic = [tlStaticHeaderOffer];
     const animationsAPI = [tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r, tlASIDEquotes2r, tlASIDEquotes2];
 
@@ -68,6 +70,8 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     function showFrame__static() {
+        BODY.classList.add("body-frame-1");
+        BODY.classList.remove("body-frame-2");
         frameApi.forEach((item) => {
             hideStage(item);
         });
@@ -90,6 +94,8 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
 
     function showFrame__API() {
+        BODY.classList.add("body-frame-2");
+        BODY.classList.remove("body-frame-1");
         frameStatic.forEach((item) => {
             hideStage(item);
         });

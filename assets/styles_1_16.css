@@ -807,9 +807,6 @@ in-sports .header__top {
   font-weight: 900;
   color: var(--emph);
 }
-.body-frame-2 .header__promo {
-  display: none;
-}
 
 .top-banner {
   display: -webkit-inline-box;
@@ -1214,6 +1211,10 @@ in-sports .header__top {
   .in-championat .large-header__team {
     font-size: 10px;
   }
+}
+
+.body-frame-2 .in-body-1 {
+  display: none;
 }
 
 @-webkit-keyframes moveTextRow {

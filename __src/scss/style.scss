@@ -84,16 +84,7 @@ body {
         top: 0;
         left: 0;
         z-index: 0;
-
-        // background: url("../img/bg.png") 0 0 no-repeat;
-        // background-size: cover;
     }
-
-    // &:not(.has-event) {
-    //     &::before {
-    //         background: linear-gradient(90deg, rgba(5, 24, 84, 1) 0%, rgba(5, 24, 84, 0) 20%, rgba(5, 24, 84, 0) 80%, rgba(5, 24, 84, 1) 100%);
-    //     }
-    // }
 
     &::after {
         z-index: 1;
@@ -318,6 +309,7 @@ body {
         left: 0;
         top: 0;
     }
+
     &--api {
         position: absolute;
         width: 100%;
