@@ -208,6 +208,10 @@ $midwidth: auto;
         padding: 6px 16px;
         box-sizing: border-box;
 
+        .has-no-promocode & {
+            display: none;
+        }
+
         span {
             font-weight: 900;
             color: var(--emph);
@@ -455,6 +459,7 @@ $midwidth: auto;
         display: flex;
         overflow: hidden;
     }
+
     display: none;
 
     &__item {

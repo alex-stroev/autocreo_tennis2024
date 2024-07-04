@@ -456,6 +456,9 @@ body.in-championat::after {
   border-radius: 6px;
   margin: 0 2px;
 }
+.has-no-promocode .aside__promo {
+  display: none;
+}
 .aside__promo span {
   font-size: 21px;
   color: var(--emph);
@@ -794,6 +797,9 @@ in-sports .header__top {
   padding: 6px 16px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.has-no-promocode .header__promo {
+  display: none;
 }
 .header__promo span {
   font-weight: 900;
