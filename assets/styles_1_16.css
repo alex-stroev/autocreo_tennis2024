@@ -437,9 +437,14 @@ body.in-championat::after {
   width: 110px;
   height: 240.625px;
 }
+.aside__cup iframe {
+  width: 100px;
+  height: 200px;
+  overflow: hidden;
+}
 .i-aside-right .aside__cup {
-  -webkit-transform: scaleY(-1);
-          transform: scaleY(-1);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 .aside__promo {
   text-transform: uppercase;
