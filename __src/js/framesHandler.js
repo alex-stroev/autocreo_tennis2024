@@ -1,4 +1,5 @@
-import { tlStaticHeaderOffer, tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r } from "./gsapAnimations";
+import { tlStaticHeaderOffer } from "./GSAPanimations_frame1";
+import { tlASIDEquotes3, tlASIDEquotes3r, tlTOPquotes3, tlTOPquotes2 } from "./GSAPanimations_frame2";
 const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     // Durations. Время указываем в секундах
