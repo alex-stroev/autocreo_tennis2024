@@ -29,4 +29,12 @@ tlASIDEquotes3.from(".gsap-aside-q3", aq3options);
 const tlASIDEquotes3r = gsap.timeline({ paused: true });
 tlASIDEquotes3r.from(".gsap-aside-q3r", aq3options);
 
-export { tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r };
+
+const tlASIDEquotes2 = gsap.timeline({ paused: true });
+tlASIDEquotes2.from(".gsap-aside-q2", aq3options);
+
+const tlASIDEquotes2r = gsap.timeline({ paused: true });
+tlASIDEquotes2r.from(".gsap-aside-q2r", aq3options);
+
+
+export { tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r, tlASIDEquotes2r,  tlASIDEquotes2};

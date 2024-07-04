@@ -564,7 +564,7 @@ body.in-championat::after {
 .only-2-quotes .aside-one-kef {
   display: block;
 }
-.aside-one-kef span {
+.aside-one-kef > span {
   display: inline-block;
   font-size: 19x;
   color: #051854;
@@ -573,6 +573,9 @@ body.in-championat::after {
   background-color: #fff;
   padding: 2px 18px 3px;
   border-radius: 4px;
+}
+.aside-one-kef > span span {
+  display: inline-block;
 }
 
 .header {
@@ -1280,11 +1283,6 @@ in-sports .header__top {
             transform: translateY(-10px);
   }
 }
-.gsap-top-1,
-.gsap-top-2 {
-  visibility: hidden;
-}
-
 .b2000 {
   font-weight: 900;
   line-height: 1;
