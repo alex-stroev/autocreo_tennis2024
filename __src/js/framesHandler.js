@@ -1,4 +1,4 @@
-import { tlStaticHeaderOffer, tlTOPquotes3, tlTOPquotes2 } from "./gsapAnimations";
+import { tlStaticHeaderOffer, tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r } from "./gsapAnimations";
 const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     // Durations. Время указываем в секундах
@@ -30,7 +30,7 @@ const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
     //
     const animationsStatic = [tlStaticHeaderOffer];
-    const animationsAPI = [tlTOPquotes3, tlTOPquotes2];
+    const animationsAPI = [tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r];
 
     //////////////////////////////////////////////////////////////////////////////
     //  Убираем лишнюю точку в конце чемпионата
