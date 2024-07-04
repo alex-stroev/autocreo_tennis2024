@@ -415,7 +415,7 @@ body.in-championat::after {
 }
 .aside__gsap-frames {
   position: relative;
-  height: 360px;
+  height: 320px;
 }
 .aside .b2000 {
   font-size: 10px;
@@ -438,7 +438,7 @@ body.in-championat::after {
   height: 240.625px;
 }
 .aside__cup iframe {
-  width: 100px;
+  width: 150px;
   height: 200px;
   overflow: hidden;
 }
@@ -1281,6 +1281,53 @@ in-sports .header__top {
             transform: translateY(-10px);
   }
 }
+.test-output {
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+  padding: 2em;
+  color: black;
+}
+.test-output__header {
+  font-size: 1.2em;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+.test-output div:not([class]) {
+  margin-bottom: 1em;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1em;
+  border-radius: 1em;
+}
+.test-output div:not([class]) span {
+  font-size: 0.9em;
+}
+.test-output .emo {
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-top: -0.2em;
+}
+
+.api-data {
+  display: none;
+}
+.has-event .api-data {
+  display: inherit;
+}
+
+.api-no-data {
+  display: inherit;
+}
+.has-event .api-no-data {
+  display: none;
+}
+
 .gsap-top-1,
 .gsap-top-2 {
   visibility: hidden;
