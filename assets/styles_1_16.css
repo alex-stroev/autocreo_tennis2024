@@ -823,6 +823,11 @@ in-sports .header__top {
           align-items: center;
   margin: 0 auto;
 }
+.top-banner > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+}
 @media (max-width: 1200px) {
   .top-banner {
     display: -webkit-box;
@@ -835,9 +840,14 @@ in-sports .header__top {
   }
 }
 .top-banner__pic {
+  -ms-flex-preferred-size: 60px;
+      flex-basis: 60px;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 60px;
-          flex: 0 0 60px;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 60px;
   text-align: center;
 }
 @media (max-width: 1200px) {
@@ -1355,4 +1365,15 @@ in-sports .header__top {
 [class^=gsap-],
 [class*=" gsap-"] {
   visibility: hidden;
+}
+
+.i-in-lr {
+  display: none !important;
+}
+.in-lr .i-in-lr {
+  display: block !important;
+}
+
+.in-lr .i-not-in-lr {
+  display: none;
 }

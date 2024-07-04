@@ -1,4 +1,4 @@
-import { tlStaticHeaderOffer } from "./GSAPanimations_frame1";
+import { tlStaticHeaderOffer, tlHeaderRightBonus } from "./GSAPanimations_frame1";
 import { tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r, tlASIDEquotes2r, tlASIDEquotes2 } from "./GSAPanimations_frame2";
 const framesHandler = (data, AUTOEVENT) => {
     //////////////////////////////////////////////////////////////////////////////
@@ -30,6 +30,7 @@ const framesHandler = (data, AUTOEVENT) => {
     //  Для запуска/остановки прописываем все таймлайны в массивы
     //////////////////////////////////////////////////////////////////////////////
     //
+    const animationsOnce = [tlHeaderRightBonus]
     const animationsStatic = [tlStaticHeaderOffer];
     const animationsAPI = [tlTOPquotes3, tlTOPquotes2, tlASIDEquotes3, tlASIDEquotes3r, tlASIDEquotes2r, tlASIDEquotes2];
 

@@ -52,6 +52,10 @@
                 background: #040fa4 url("img/bg.png") 0 0 no-repeat;
                 background-size: 100% auto;
             }
+            body.in-championat {
+                background: #040fa4 url("img/bg_champ.png") 0 0 no-repeat;
+                background-size: 100% auto;
+            }
 
             /* body.in-championat::after {
                 z-index: 2;
@@ -69,7 +73,7 @@
         <script src="https://fcdn.betcity.ru/autobet/autobet.js"></script>
     </head>
 
-    <body class="in-lr in-sports1 in-championat1 in-soccer1">
+    <body class="in-lr1 in-sports1 in-championat in-soccer1">
         <a class="body-wrap" href="%banner.reference_user1%" target="%banner.target%">
             <div class="layout">
                 <div class="layout__header">
@@ -94,8 +98,9 @@
                     </div>
                     <div class="b2000__bott gsap-top-1">за <span>первую ставку!</span></div>
                 </div>
-                <div class="header__promo gsap-top-3">Промокод <span data-autobet="PROMOCODE"></span></div>
+                <div class="header__promo gsap-top-3 i-in-lr">Промокод <span data-autobet="PROMOCODE"></span></div>
             </div>
+            
             <div class="i-gsap-frame--api" id="header-frame2"><div class="top-banner">
     <div class="top-banner__team" data-autobet="TEAM1"></div>
     <div class="top-banner__pic">
@@ -141,7 +146,7 @@
 </div>
         </div>
         <div class="header__right">
-            <!-- <div class="header__promo gsap-top-2">Промокод <span>2000BET</span></div> -->
+            <div class="header__promo gsap-top-3right i-not-in-lr">Промокод <span data-autobet="PROMOCODE"></span></div>
             <div class="header__getbonus i-an-btn">Получить бонус</div>
         </div>
     </div>

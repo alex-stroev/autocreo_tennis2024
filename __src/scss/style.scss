@@ -254,7 +254,6 @@ body {
 @import "highlights";
 @import "animations";
 
-
 // @import "../__components/testoutput/testoutput";
 
 //////////////////////////////////////////////////////////
@@ -338,4 +337,22 @@ body {
 [class^="gsap-"],
 [class*=" gsap-"] {
     visibility: hidden;
+}
+
+//////////////////////////////////////////////////////////
+///
+//////////////////////////////////////////////////////////
+///
+.i-in-lr {
+    display: none !important;
+
+    .in-lr & {
+        display: block !important;
+    }
+}
+
+.i-not-in-lr {
+    .in-lr & {
+        display: none;
+    }
 }
