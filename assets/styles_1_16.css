@@ -160,8 +160,8 @@ body {
 }
 
 body {
-  background: #143dda -webkit-gradient(linear, left top, left bottom, from(#0f2a99), to(rgba(15, 42, 153, 0)));
-  background: #143dda linear-gradient(180deg, #0f2a99 0%, rgba(15, 42, 153, 0) 100%);
+  background: #040fa4 -webkit-gradient(linear, left top, left bottom, from(#0f2a99), to(rgba(15, 42, 153, 0)));
+  background: #040fa4 linear-gradient(180deg, #0f2a99 0%, rgba(15, 42, 153, 0) 100%);
   color: #fff;
   background-size: cover;
   background-position: center center;
