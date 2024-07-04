@@ -143,52 +143,52 @@ body {
 }
 /////////////////////////////////
 
-.offer-100 {
-    text-align: center;
-    font-weight: 900;
-    line-height: 11px;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    position: relative;
-    //
-    font-size: 10px;
+// .offer-100 {
+//     text-align: center;
+//     font-weight: 900;
+//     line-height: 11px;
+//     text-align: center;
+//     color: #fff;
+//     text-transform: uppercase;
+//     position: relative;
+//     //
+//     font-size: 10px;
 
-    &__header {
-        position: relative;
-        font-family: "Nekst";
-        font-size: calc(24em / 10);
-        padding-bottom: calc(6em / 24);
-        font-weight: 700;
-        line-height: calc(16em / 24);
-        color: var(--emph);
-        white-space: nowrap;
+//     &__header {
+//         position: relative;
+//         font-family: "Nekst";
+//         font-size: calc(24em / 10);
+//         padding-bottom: calc(6em / 24);
+//         font-weight: 700;
+//         line-height: calc(16em / 24);
+//         color: var(--emph);
+//         white-space: nowrap;
 
-        sup {
-            position: absolute;
-            font-size: 0.6em;
-            // color: red;
-            top: -0.4em;
-            right: -0.4em;
+//         sup {
+//             position: absolute;
+//             font-size: 0.6em;
+//             // color: red;
+//             top: -0.4em;
+//             right: -0.4em;
 
-            .aside & {
-                top: -0.2em;
-                right: 0.4em;
-            }
-        }
-    }
+//             .aside & {
+//                 top: -0.2em;
+//                 right: 0.4em;
+//             }
+//         }
+//     }
 
-    span {
-        display: block;
-    }
+//     span {
+//         display: block;
+//     }
 
-    .header & {
-        $sp: 12px;
-        //
-        font-size: 22px;
-        @include fluid_typo_auto($tbp, 22, 10);
-    }
-}
+//     .header & {
+//         $sp: 12px;
+//         //
+//         font-size: 22px;
+//         @include fluid_typo_auto($tbp, 22, 10);
+//     }
+// }
 
 .i-an-btn {
     z-index: 0;

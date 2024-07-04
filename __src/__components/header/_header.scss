@@ -43,6 +43,12 @@ $midwidth: auto;
         position: relative;
     }
 
+    &__left,
+    &__right {
+        min-width: 25%;
+        max-width: 25%;
+    }
+
     &__left {
         flex: 1 1 0;
         padding-left: 6px;
@@ -169,7 +175,7 @@ $midwidth: auto;
     /////////////////////////////////////////////////////////////////
     &__getbonus,
     &__promo {
-        $bfs: 22;
+        $bfs: 18;
         color: #fff;
         text-align: center;
 
@@ -181,12 +187,12 @@ $midwidth: auto;
 
         //
         font-size: $bfs * 1px;
-        padding: 8px 16px;
-        @include fluid_typo_auto($tbp, 22, 14);
+        padding: calc(8em/$bfs) calc(16em/$bfs);
+        @include fluid_typo_auto($tbp, $bfs, 14);
 
         .in-soccer &,
         .in-lr & {
-            @include fluid_typo_auto(1600, 22, 14);
+            @include fluid_typo_auto(1600, $bfs, 14);
         }
 
         .in-sports &,
@@ -202,10 +208,11 @@ $midwidth: auto;
     }
 
     &__promo {
+        $bfs: 18;
         font-weight: 400;
         background-color: transparent;
         border: 2px solid var(--emph);
-        padding: 6px 16px;
+        padding: calc(6em/$bfs) calc(16em/$bfs);
         box-sizing: border-box;
 
         .has-no-promocode & {
