@@ -110,7 +110,7 @@ $midwidth: auto;
         .in-championat & {
             flex-direction: column;
             justify-content: center;
-            gap: 16px;
+            gap: 1em;
 
             img {
                 width: 500px;
@@ -586,9 +586,10 @@ $midwidth: auto;
     }
 }
 
-
 .in-body-1 {
+    transition: 0.3s ease margin-top;
     .body-frame-2 & {
-        display: none;
+        margin-top: -4em;
+        opacity: 0;
     }
 }

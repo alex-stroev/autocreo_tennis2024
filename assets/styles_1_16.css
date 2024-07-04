@@ -702,7 +702,7 @@ in-sports .header__top {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 16px;
+  gap: 1em;
 }
 .in-sports .header__right img, .in-championat .header__right img {
   width: 500px;
@@ -1213,8 +1213,13 @@ in-sports .header__top {
   }
 }
 
+.in-body-1 {
+  -webkit-transition: 0.3s ease margin-top;
+  transition: 0.3s ease margin-top;
+}
 .body-frame-2 .in-body-1 {
-  display: none;
+  margin-top: -4em;
+  opacity: 0;
 }
 
 @-webkit-keyframes moveTextRow {
