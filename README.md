@@ -26,7 +26,7 @@ _Высота шапки:_
 В папке assets ищешь js (jназвание может варьировать), разминифицируешь его, ищешь объект и в нем ураганишь)))
 
 ## Ссылки
-
+<a class="body-wrap" href="%reference%" target="%banner.target%"> - LR
 <a class="body-wrap" href="%reference%" target="%banner.target%"> - sports
 <a class="body-wrap" href="%clickurl_1%" target="_blank"> - championat
 <a class="body-wrap" href="%banner.reference_user1%" target="%banner.target%"> - soccer
