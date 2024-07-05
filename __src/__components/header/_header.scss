@@ -477,6 +477,7 @@ $midwidth: auto;
     .only-2-quotes & {
         display: flex;
         overflow: hidden;
+        justify-content: center;
     }
 
     display: none;
