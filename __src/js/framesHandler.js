@@ -40,7 +40,7 @@ const framesHandler = (data, AUTOEVENT) => {
     //  Убираем лишнюю точку в конце чемпионата
     //////////////////////////////////////////////////////////////////////////////
 
-    if (data.CHAMP && data.CHAMP.split(".")[1] && data.CHAMP.split(".")[1].trim() === "") {
+    if (data.CHAMP && data.CHAMP.split(".")[1] && data.CHAMP.split(".")[1].trim() == "") {
         data.CHAMP = data.CHAMP.split(".")[0];
     }
 

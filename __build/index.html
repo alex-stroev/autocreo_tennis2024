@@ -56,12 +56,14 @@
                 background: #040fa4 url("img/bg_champ.png") 0 0 no-repeat;
                 background-size: 100% auto;
             }
-
-            /* body.in-championat::after {
-                z-index: 2;
-                background-image: url("img/champ_grad.png");
-                background-size: 100% auto;
-            } */
+            .rocket__rocket {
+                background: url("img/rocket.png") 0 0 no-repeat;
+                background-size: cover;
+            }
+            .rocket__ball {
+                background: url("img/ball.png") 0 0 no-repeat;
+                background-size: cover;
+            }
 
             a {
                 text-decoration: none;
@@ -177,8 +179,9 @@
                 </div>
             </div>
 
-            <div class="aside__cup">
-                <iframe src="canvas/rack.html" scrolling="no" frameborder="0"></iframe>
+            <div class="rocket">
+                <div class="rocket__rocket"></div>
+                <div class="rocket__ball"></div>
             </div>
 
             <div class="aside__promo">Промокод <span data-autobet="PROMOCODE">2000BET</span></div>
@@ -231,8 +234,9 @@
                 </div>
             </div>
 
-            <div class="aside__cup">
-                <iframe src="canvas/rack.html" scrolling="no" frameborder="0"></iframe>
+            <div class="rocket">
+                <div class="rocket__rocket"></div>
+                <div class="rocket__ball"></div>
             </div>
 
             <div class="aside__promo">Промокод <span data-autobet="PROMOCODE">2000BET</span></div>

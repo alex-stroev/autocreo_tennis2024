@@ -214,3 +214,77 @@
         }
     }
 }
+
+///////////////////////////////////////////////////////////////
+//
+///////////////////////////////////////////////////////////////
+.rocket {
+    aspect-ratio: 10/13;
+    position: relative;
+    overflow: hidden;
+    width: $aside-width;
+
+    .i-aside-right & {
+        transform: scaleX(-1);
+        margin-left: -$aside_sidepad;
+    }
+
+    &__rocket {
+        position: absolute;
+        left: 0;
+        bottom: -15%;
+        width: 130%;
+        aspect-ratio: 268/238;
+        background: url("../img/rocket.png") 0 0 no-repeat;
+        background-size: cover;
+        transform-origin: 80% 80%;
+        animation: asideRocket 0.8s ease-in-out infinite;
+    }
+
+    &__ball {
+        background: url("../img/ball.png") 0 0 no-repeat;
+        background-size: cover;
+        position: absolute;
+        left: 40%;
+        bottom: 44%;
+        width: 28px;
+        aspect-ratio: 1/1;
+        animation: asideBall 0.8s ease-in-out infinite;
+    }
+}
+
+@keyframes asideRocket {
+    $start: 0deg;
+    0% {
+        transform: rotate($start);
+    }
+
+    5% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate($start);
+    }
+    100% {
+        transform: rotate($start);
+    }
+}
+
+@keyframes asideBall {
+    $start: 0px;
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    20% {
+        transform: translateX(120%) translateY(-220%);
+    }
+
+    // 30% {
+    //     transform: translateX(100%) translateY(-200%);
+    // }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
