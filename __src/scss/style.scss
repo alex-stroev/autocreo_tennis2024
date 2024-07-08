@@ -15,7 +15,7 @@ $soccer_bp: 1626px;
 // $aside-width: 150px;
 // $aside-width: 150px;
 $aside-width: 150px;
-$aside-frame-height: 320px;
+$aside-frame-height: 290px;
 $aside_sidepad: 8px;
 $toggle: calc($content-width-lr + $aside-width * 2);
 $mobile: 1200px;
@@ -335,13 +335,13 @@ body {
 ///
 //////////////////////////////////////////////////////////
 ///
-.i-in-lr {
-    display: none !important;
+// .i-in-lr {
+//     display: none !important;
 
-    .in-lr & {
-        display: block !important;
-    }
-}
+//     .in-lr & {
+//         // display: block !important;
+//     }
+// }
 
 .i-not-in-lr {
     .in-lr & {

@@ -34,6 +34,10 @@ $midwidth: auto;
         .in-soccer & {
             height: 140 - $gap;
         }
+
+        // & > div {
+        //     border: 1px solid yellow;
+        // }
     }
 
     &__left,
@@ -47,6 +51,11 @@ $midwidth: auto;
     &__right {
         min-width: 25%;
         max-width: 25%;
+
+        &.in-lr {
+            min-width: 20%;
+            max-width: 20%;
+        }
     }
 
     &__left {
@@ -187,7 +196,7 @@ $midwidth: auto;
 
         //
         font-size: $bfs * 1px;
-        padding: calc(8em/$bfs) calc(16em/$bfs);
+        padding: calc(8em / $bfs) calc(16em / $bfs);
         @include fluid_typo_auto($tbp, $bfs, 14);
 
         .in-soccer &,
@@ -205,6 +214,10 @@ $midwidth: auto;
         //     opacity: 1 !important;
         //     visibility: visible !important;
         // }
+
+        // .in-lr & {
+        //     margin-left: 80px;
+        // }
     }
 
     &__promo {
@@ -212,7 +225,7 @@ $midwidth: auto;
         font-weight: 400;
         background-color: transparent;
         border: 2px solid var(--emph);
-        padding: calc(6em/$bfs) calc(16em/$bfs);
+        padding: calc(6em / $bfs) calc(16em / $bfs);
         box-sizing: border-box;
 
         .has-no-promocode & {
@@ -341,6 +354,7 @@ $midwidth: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 4px 1em 2px;
 
         // background-color: red;
@@ -477,8 +491,13 @@ $midwidth: auto;
     .only-2-quotes & {
         display: flex;
         overflow: hidden;
-        justify-content: center;
+        justify-content: space-between;
     }
+
+    // .in-sports &,
+    // .in-championat & {
+    //     background-color: red;
+    // }
 
     display: none;
 
@@ -490,6 +509,8 @@ $midwidth: auto;
         background-color: #fff;
         color: var(--bgcolor);
         line-height: 1;
+        font-weight: bold;
+
         @include fluid_typo_auto($tbp, 14, 10);
 
         span {
@@ -499,10 +520,20 @@ $midwidth: auto;
         &:first-child {
             border-radius: $brad 0 0 $brad;
             border-right: 1px solid var(--bgcolor);
+
+            .in-sports &,
+            .in-championat & {
+                border-radius: $brad;
+            }
         }
 
         &:last-child {
             border-radius: 0 $brad $brad 0;
+
+            .in-sports &,
+            .in-championat & {
+                border-radius: $brad;
+            }
         }
     }
 }
