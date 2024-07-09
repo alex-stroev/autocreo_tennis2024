@@ -23,7 +23,7 @@ _Высота шапки:_
 
 ## Для контента:
 
-В папке assets ищешь js (jназвание может варьировать), разминифицируешь его, ищешь объект и в нем ураганишь)))
+В папке assets ищешь js (название может варьировать), разминифицируешь его, ищешь объект и в нем ураганишь)))
 
 ## Ссылки
 <a class="body-wrap" href="%reference%" target="%banner.target%"> - LR
@@ -31,13 +31,3 @@ _Высота шапки:_
 <a class="body-wrap" href="%clickurl_1%" target="_blank"> - championat
 <a class="body-wrap" href="%banner.reference_user1%" target="%banner.target%"> - soccer
 
-
-## Для чемпионата:
-
-Там ВООБЩЕ не используется API, так что делаем вот что:
-
-1. сперва получаем объект из АПИ на локалке.
-2. копируем его содержимое в preCapturedDATA (для этого DEVMODE должно быть равно 1)
-3. Ставим CHAMPIONAT = 1
-4. Комментируем в index.kit подключение autobet.js
-5. Печатает...
