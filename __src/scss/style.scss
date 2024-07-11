@@ -20,6 +20,8 @@ $aside_sidepad: 8px;
 $toggle: calc($content-width-lr + $aside-width * 2);
 $mobile: 1200px;
 
+$bp_mob: 768px;
+
 :root {
     --aside-padding-top: 60px;
     --red: #ce0000;

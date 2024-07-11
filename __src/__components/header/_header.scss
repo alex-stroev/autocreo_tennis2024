@@ -6,6 +6,7 @@ $midwidth: auto;
     padding: 4px 0;
     width: 100%;
     overflow: hidden;
+    min-width: $bp_mob;
 
     // Установку высоты делаем в &__top, чтоб не писать 100500 флекс-инструкций
 
@@ -110,7 +111,9 @@ $midwidth: auto;
     }
 
     .b2000 {
-        @include fluid_typo_auto(1600, 21, 10);
+        .in-lr & {
+            @include fluid_typo_auto(1600, 21, 10);
+        }
     }
 
     &__right {
